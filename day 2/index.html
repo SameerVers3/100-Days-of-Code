@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="calculator">
+        <div class="screen" id="screen-text">0</div>
+        <div>
+            <button class="operator-btn" onclick="pAC()">AC</button>
+            <button class="operator-btn" onclick="pDEL()">DEl</button>
+            <button class="operator-btn" onclick="pPerc()">%</button>
+            <button class="operator-btn" onclick="pDivide()">/</button>
+        </div>
+        <div>
+            <button onclick="p7()">7</button>
+            <button onclick="p8()">8</button>
+            <button onclick="p9()">9</button>
+            <button onclick="pMultiply()" class="operator-btn">*</button>
+        </div>
+        <div>
+            <button onclick="p4()">4</button>
+            <button onclick="p5()">5</button>
+            <button onclick="p6()">6</button>
+            <button onclick="pMinus()" class="operator-btn">-</button>
+        </div>
+        <div>
+            <button onclick="p1()">1</button>
+            <button onclick="p2()">2</button>
+            <button onclick="p3()">3</button>
+            <button onclick="pPlus()" class="operator-btn">+</button>
+        </div>
+        <div>
+            <button onclick="p00()">00</button>
+            <button onclick="p0()">0</button>
+            <button onclick="pDot()">.</button>
+            <button onclick="pEqual()" class="equal-btn">=</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
