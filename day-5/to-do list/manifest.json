@@ -1,0 +1,9 @@
+{
+    "manifest_version": 3,
+    "version": "1.1",
+    "name": "To Do List",
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": "images/icon.png"
+    }
+}
