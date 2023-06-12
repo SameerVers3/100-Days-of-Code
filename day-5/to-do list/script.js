@@ -3,6 +3,7 @@ const addBtn = document.getElementById("add-btn")
 const listContatiner = document.getElementById("task-list")
 
 renderData()
+
 addBtn.addEventListener("click", function(){
     if(inputBox.value === ""){
         alert("text box is empty")
