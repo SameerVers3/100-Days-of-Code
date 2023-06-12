@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>stop watch</title>
+</head>
+<body>
+    <div class="container">        
+        <div class="time">
+            <div class="time-box">
+                <span id="minutes">00 :</span>
+                <h2>Minutes</h2>
+            </div>
+            <div class="time-box">
+                <span id="seconds">00 :</span>
+                <h2>Seconds</h2>
+            </div>
+            <div class="time-box">
+                <span id="mili-sec">00</span>
+                <h2>mili-Sec</h2>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button id="start"><img src="img/play.png" alt="start"></button>
+            <button id="stop"><img src="img/pause.png" alt="stop"></button>
+            <button id="Lap"><img src="img/flag.png" alt="lap"></button>
+            <button id="reset"><img src="img/reset.png" alt="reset"></button>
+
+        </div>
+        <ul id="lap-container">
+        </ul>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

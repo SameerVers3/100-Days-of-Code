@@ -10,8 +10,6 @@ function currentTime(){
     let hour = d.getHours()
     let min = d.getMinutes()
     let sec = d.getSeconds()
-    
-    console.log(sec)
 
     hours.textContent = hour + " : "
     minutes.textContent = min + " : "
