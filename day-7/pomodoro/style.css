@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    user-select: none;
 }
 
 body{
@@ -22,6 +23,12 @@ body{
     text-align: center;
     font-weight: 600;
     color: #cf0f48;
+
+    box-shadow: 0 0 50px #aa0839;
+}
+
+.container h2{
+    padding-bottom: 20px;
 }
 
 .buttons{
@@ -32,14 +39,131 @@ body{
 }
 
 .btn{
-    width: 45px;
     background: linear-gradient(45deg, #ff477e, #f0215f);
     color: white;
-    padding: 8px 3px;
+    padding: 10px 10px;
     border: none;
     border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.btn:hover{
+    box-shadow: 0 0 10px #cf0f48;
+}
+
+.timer{
+    padding: 10px;
+}
+.circle{
+    height: 250px;
+    width: 250px;
+    border: 6px solid #f0215f;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.time{
+    color: #f0215f;
+    font-size: 3.5rem;
+}
+
+.btn-container{
+    padding-top: 25px;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+}
+
+.play {
+    position: relative;
+    height: 50px;
+    width: 50px;
+    border: none;
+    background: linear-gradient(45deg, #ff477e, #f0215f);
+    overflow: hidden;
+    border-radius: 50%;
+    padding: 10px;
+}
+  
+.play::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 6px;
+    right: 3px;
+    bottom: 3px;
+    background-image: url('img/play.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.pause {
+    position: relative;
+    height: 50px;
+    width: 50px;
+    border: none;
+    background: linear-gradient(45deg, #ff477e, #f0215f);
+    overflow: hidden;
+    border-radius: 50%;
+    padding: 10px;
 }
 
 
+.pause::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    background-image: url('img/pause.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.reset {
+    position: relative;
+    height: 50px;
+    width: 50px;
+    border: none;
+    background: linear-gradient(45deg, #ff477e, #f0215f);
+    overflow: hidden;
+    border-radius: 50%;
+    padding: 10px;
+  }
+
+
+.reset::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    background-image: url('img/reset.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.pause:hover{
+    box-shadow: 0 0 10px #cf0f48;
+}
+
+.play:hover{
+    box-shadow: 0 0 10px #cf0f48;
+}
+
+.reset:hover{
+    box-shadow: 0 0 10px #cf0f48;
+}
 
 
