@@ -36,6 +36,7 @@ body{
     display: flex;
     flex-direction: row;
     gap: 30px;
+    max-width: 400px;
 }
 
 .time-box{
@@ -76,9 +77,31 @@ ul li{
     font-size: 17px;
     color: rgb(80, 79, 79);
     text-align: center;
-    padding: 10px 0px;
+    padding: 5px 0px;
 }
 
+ul{
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
 
+ul::-webkit-scrollbar {
+    width: 13px;
+}
+  
 
+ul::-webkit-scrollbar-track {
+    background: #e5f5f7;
+    border-radius: 50px;
+}
 
+ul::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #4CE0D2, #22AAA1);
+    border-radius: 50px;
+}
+  
+ul::-webkit-scrollbar-thumb:hover {
+    background: #058d84;
+}

@@ -68,8 +68,3 @@ reset.addEventListener("click", function(){
     milisecEl.innerText = "00"
     lapContainer.innerHTML = ""
 })
-
-
-
-
-
