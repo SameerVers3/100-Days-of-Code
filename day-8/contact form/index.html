@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Contact Us</title>
+</head>
+<body>
+    <div class="container">
+        <div class="contact-info">
+            <h2>Let's get in touch</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident id in illo placeat ipsam porro!</p>
+            
+            <div class="add">
+                <span class="address"><img src="img/map.png" alt="map">Mountain View, California, United States</span>
+                <span class="address"><img src="img/email.png" alt="map">lorem@ipsum.com</span>
+                <span class="address"><img src="img/phone.png" alt="map">123-456-789</span>
+            </div>
+            
+
+            <div class="contact-links">
+                <p>Connect with us: </p>
+                <div class="contact-blocks">
+                    <button class="social-link"><img src="img/facebook.png" alt="facebook"></button>
+                    <button class="social-link"><img src="img/twitter.png" alt="twitter"></button>
+                    <button class="social-link"><img src="img/instagram.png" alt="instagram"></button>
+                    <button class="social-link"><img src="img/linkedin.png" alt="linkedin"></button>
+                </div>
+            </div>
+        </div>
+        <form onsubmit="sendEmail(); reset(); return false; ">
+                <h2>Contact Us</h2>
+
+                <input class="input-box" id="name" type="text" placeholder="Name" required>
+                <input class="input-box" id="mail" type="email" placeholder="name@example.com" required>
+                <input class="input-box" type="tel" step="10" placeholder="+92312-3456789" required>
+                <textarea class="message" placeholder="Enter your message"></textarea>
+                <span><input type="checkbox" class="check" required><a href="#">accept privacy policy</a></span>
+                <div class="but">
+                    <button class="submit">submit</button>
+                </div>
+        </form>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
