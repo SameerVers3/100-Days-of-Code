@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Gradient Generator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="panel", id="panel">
+
+        </div>
+        <label for="input">Select direction and colors</label>
+        <div class="inputs">
+            <select name="direction" id="direction">
+                <option value="to top">to top</option>
+                <option value="to top right">to top right</option>
+                <option value="to right">to right</option>
+                <option value="to bottom right">to bottom right</option>
+                <option value="to bottom">to bottom</option>
+                <option value="to bottom left">to bottom left</option>
+                <option value="to left">to left</option>
+                <option value="to top left">to top left</option>
+
+            </select>
+            
+            <input type="color" class="color" id="color1" value="#7aabfb">
+            <input type="color" class="color" id="color2" value="#4c0051">
+        </div>
+
+        <div class="text">
+            <div class="text-container">
+                <span id="txt">linear-gradient(to top, #7aabfb, #4c0051)</span>
+            </div>
+            <button id="cpy"><img src="copy.png" alt="copy"></button>
+        </div>
+        <div class="btn">
+            <button id="generate">Generate</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
