@@ -10,15 +10,43 @@
     <div class="container">
        <div class="header">
         <div class="search-box">
-            <input type="text" placeholder="Enter your location" class="input-box">
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            <input type="text" id="input-el" placeholder="Enter your location" class="input-box">
+            <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
        </div>
+
+       <div class="location-not-found">
+            <h1>Sorry, Location not found</h1>
+            <img src="img/404.png" alt="Not found">
+       </div>
+
        <div class="weather-body">
-        
+            <img src="img/cloud.png" alt="Weather image" id="weather-img">
+            <div class="weather-box">
+                <p class="temperature" id="temp">90</p>
+                <p class="description" id="status">Lightning</p>
+            </div>
+
+            <div class="weather-details">
+                <div class="humidity">
+                    <i class="fa-solid fa-droplet"></i>
+                    <div class="text">
+                        <span id="humidity">80%</span>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="wind">
+                    <i class="fa-solid fa-wind"></i>
+                    <div class="text">
+                        <span id="wind">80Km/H</span>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+           </div>
        </div>
     </div>
 
     <script src="https://kit.fontawesome.com/af3dbed821.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 </html>
