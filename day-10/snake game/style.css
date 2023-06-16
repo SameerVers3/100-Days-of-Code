@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter&family=Indie+Flower&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Comforter', cursive;
+    user-select: none;
+}
+
+.body{
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    background: url("img/bg.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.board{
+    border: 10px solid black;
+    width: 70vmin;
+    height: 72vmin;
+    display: grid;
+    grid-template-rows: repeat(18, 1fr);
+    grid-template-columns: repeat(18, 1fr);
+    /* z-index: 900;
+    position: fixed; */
+}
+
+.board-back{
+    padding: 40px;
+    background: linear-gradient(to bottom left, #088000, #71ad00);
+    border-radius: 50px;
+}
+
+.score{
+
+    background: url(img/board.png);
+    background-size: cover;
+    height: 18vmin;
+    width: 90vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.heading h2{
+    color: #fff;
+    font-size: 8vh;
+    margin-left: 0px, 10px, 0px, 10px;
+}
+
+.score span{
+    font-family: 'Indie Flower', cursive;
+    font-size: 4vh;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.head{
+    background: linear-gradient(45deg, #725d00, #947903);
+    border: 4px solid rgb(245, 223, 252);
+    border-radius: 10px;
+}
+
+.food{
+    background: linear-gradient(45deg, #fffc5d, #ffae00);
+    border: 7px solid #cc9c00;
+    border-radius: 50%;
+}
+
+.snake{
+    background: linear-gradient(45deg, #eed028, #dab900);
+    border: 5px solid #088000;
+    border-radius: 10px;
+    padding: 2px;
+}
