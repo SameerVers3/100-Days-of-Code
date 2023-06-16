@@ -72,7 +72,6 @@ function gameEngine(){
     // move the snake
 
     for (let i=snakeArr.length-2; i>=0; i--){
-        console.log("saud")
         snakeArr[i+1] = {...snakeArr[i]}
     }
 
