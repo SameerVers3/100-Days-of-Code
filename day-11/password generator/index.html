@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Password Generator</title>
+</head>
+<body>
+    <div class="container">
+        <h2 class="heading">Password Generator</h2>
+        <div class="password-box">
+            <div class="panel">
+                <p class="password" id="pass">Click on generate</p>
+            </div>
+            <button id="cpy">
+                <i class="fa-regular fa-copy"></i>
+            </button>
+        </div>
+
+        <div class="frm">
+            <div class="textbox">
+                <span id="valueElement">Length: 8</span>
+            </div>
+            <div class="slide options">
+                <span class="min-max">4</span>
+                <input type="range" class="slide" max="18" min="4" id="rangeElement" value="8">
+                <span class="min-max">18</span>
+            </div>
+            <div class="textbox">
+                <span class="form-text">Settings</span>
+            </div>
+            <div class="options">
+                <p>Contains UpperCase</p>
+                <label class="switch">
+                    <input type="checkbox" id="isUpper">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div class="options">
+                <p>Contains lowerCase</p>
+                <label class="switch">
+                    <input type="checkbox" id="isLower">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div class="options">
+                <p>Contains Numbers</p>
+                <label class="switch">
+                    <input type="checkbox" id="isNum">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div class="options">
+                <p>Contains Special Characters</p>
+                <label class="switch">
+                    <input type="checkbox" id="isSpecial">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <button class="options btn" id="generate">
+                Generate
+            </button>
+            <span>Developed by: <a href="https://twitter.com/Sameer_vers3">@Sameer_vers3</a></span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/af3dbed821.js" crossorigin="anonymous"></script>
+</body>
+</html>

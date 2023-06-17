@@ -6,7 +6,7 @@ let board = document.getElementById("board")
 let scoreEl = document.getElementById("score")
 let hightScore = document.getElementById("hi-score")
 let lastPaintTime = 0
-let speed=12
+let speed=10
 let score = 0
 let hiscoreval = 0
 
