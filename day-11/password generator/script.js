@@ -39,7 +39,7 @@ gen.addEventListener("click", function(){
     for(let i=0; i<length; i++){
         password += charracters.charAt(Math.floor(Math.random()*charracters.length))
     }
-
+    
     pass.textContent = password
 })
 
