@@ -14,19 +14,20 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: black;
+    background: linear-gradient(to bottom right, #58fdd4, #f29cea);
 }
 
 .container{
     padding: 15px;
     background-color: #fff;
-    width: 500px;
+    width: 700px;
     height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     border-radius: 25px;
+    box-shadow: 12px 10px 20px rgb(146, 103, 161);
 }
 
 .pallet{
@@ -70,12 +71,10 @@ button:hover{
 .copy{
     height: 50px;
     width: 120px;
-    font-size: 25px;
+    font-size: 15px;
     color: #fff;
     margin-top: 250px;
     text-align: center;
-    height: 50px;
-    width: 50px;
 }
 
 .copy:hover{

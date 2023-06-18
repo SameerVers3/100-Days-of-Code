@@ -17,8 +17,7 @@ function generate(){
         div.style.backgroundColor = getRandomColor()
         div.classList.add("col")
         let copy = document.createElement("div")
-        copy.innerHTML = `<i class="fa-regular fa-copy"></i>`
-        // copy.textContent = `#${}`
+        copy.innerHTML = `<br> <p>${div.style.backgroundColor}</p>`
         copy.classList.add("copy")
         div.appendChild(copy)
         pallet.appendChild(div)
