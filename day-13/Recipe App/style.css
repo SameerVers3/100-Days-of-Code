@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #F08700;
+}
+
+.header{
+    padding: 90px 0px 60px 0px;
+    background-color: #F08700;
+    height: 130px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-box{
+    background-color: #fff;
+    border-radius: 25px;
+    width: 420px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-box{
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+}
+
+input{
+    width: 370px;
+}
+
+.search-btn{
+    margin: 6px;
+    padding: 13px;
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    font-size: 20px;
+    color: #F08700;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.search-btn:hover{
+    background-color: #fff3e2;
+    color: #b36500;
+}
+
+.bdy{
+    padding: 70px;
+    height: 100%;
+    width: 100vw;
+    background-color: #fff;
+    border-radius: 70px 70px 0 0; 
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    overflow: scroll;
+}
+
+
+.recipi-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 23%;
+    height: 70%;
+    background-color: #F08700;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.recipi-thumbnail{
+    background-size: 100% 100%, cover;
+    width: 100%;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 25vh;
+    border-radius: 15px;
+    
+}
+
+.view-Recipi-btn{
+    margin-block: 20px;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 15px 10px 15px;
+    box-shadow: 0 0 8px #a05500; 
+    background: linear-gradient(135deg, #f5890d, #ffc400);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.view-Recipi-btn:hover{
+    
+    background: linear-gradient(135deg, #ffe986, #fcc205);
+    box-shadow: 0 0 2px #814a01;
+}
+
+.bdy::-webkit-scrollbar {
+    width: 15px;
+
+}
+
+.name{
+    font-size: 20px;
+    text-align: center;
+}
+  
+
+.bdy::-webkit-scrollbar-track {
+    background: #f5e4bf;
+    border-radius: 30px;
+    margin: 3px 0px 3px 0px;
+
+}
+
+.bdy::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #ffae00, #ffee00);
+    border-radius: 50px;
+}
+  
+.bdy::-webkit-scrollbar-thumb:hover {
+    background: #ff5100;
+    cursor: pointer;
+}
+
+.recipe{
+    max-width: 650px;
+    height: 65%;
+    border-radius: 25px;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: rgba(235, 97, 5, 0.589);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.6px);
+    -webkit-backdrop-filter: blur(7.6px);
+    border: 2px solid #fff;
+    color: #fff;
+
+}
+
+.close-box{
+    max-width: 650px;
+    width: 100%;
+}
+
+.cross{
+    float: right;
+    height: 40px;
+    width: 40px;
+    background-color: transparent;
+    border: 2px solid white;
+    font-size: 20px;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.cross:hover{
+    background-color: #fff;
+    color: #F08700;
+}
