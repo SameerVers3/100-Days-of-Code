@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    user-select: none;
 }
 
 body{
@@ -13,17 +14,28 @@ body{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: #F08700;
+    background-color: #BB8FA9;
 }
 
 .header{
     padding: 90px 0px 60px 0px;
-    background-color: #F08700;
+    background-color: #BB8FA9;
     height: 130px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 10px
+}
+
+.header h2{
+    color: #fff;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
 }
 
 .search-box{
@@ -43,10 +55,13 @@ body{
     border: none;
     outline: none;
     border-radius: 25px;
+    font-size: 17px;
 }
 
 input{
     width: 370px;
+    color: #85028a;
+    text-transform: capitalize;
 }
 
 .search-btn{
@@ -56,14 +71,16 @@ input{
     border: none;
     border-radius: 25px;
     font-size: 20px;
-    color: #F08700;
+    width: 50px;
+    height: 50px;
+    color: #b17297;
     font-weight: 600;
     cursor: pointer;
 }
 
 .search-btn:hover{
-    background-color: #fff3e2;
-    color: #b36500;
+    background-color: #f0d1f0;
+    color: #85028a;
 }
 
 .bdy{
@@ -79,6 +96,20 @@ input{
     overflow: scroll;
 }
 
+.not-found{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    color: #816581;
+}
+
+.bdy img{
+    width: 368px;
+    height: 278px;
+}
+
 
 .recipi-card{
     display: flex;
@@ -87,36 +118,41 @@ input{
     flex-direction: column;
     width: 23%;
     height: 70%;
-    background-color: #F08700;
+    background-color: #917fb32d;
     border-radius: 15px;
     padding: 10px;
+    font-weight: 600;
 }
 
 .recipi-thumbnail{
-    background-size: 100% 100%, cover;
+    background-size: cover;
+    background-repeat: no-repeat;
     width: 100%;
     margin-bottom: 20px;
-    width: 100%;
     height: 25vh;
     border-radius: 15px;
-    
+}
+
+.recipi-card p{
+    margin: 10px;
 }
 
 .view-Recipi-btn{
-    margin-block: 20px;
+
+    margin-block: 4px;
     border: none;
     border-radius: 15px;
     padding: 10px 15px 10px 15px;
-    box-shadow: 0 0 8px #a05500; 
-    background: linear-gradient(135deg, #f5890d, #ffc400);
+    background: linear-gradient(135deg, #d675ee, #8a6296);
     font-weight: 600;
+    color: #fff;
     cursor: pointer;
 }
 
 .view-Recipi-btn:hover{
     
-    background: linear-gradient(135deg, #ffe986, #fcc205);
-    box-shadow: 0 0 2px #814a01;
+    background: linear-gradient(135deg, #df52d8, #67077a);
+    box-shadow: 0 0 2px #430181;
 }
 
 .bdy::-webkit-scrollbar {
@@ -131,25 +167,25 @@ input{
   
 
 .bdy::-webkit-scrollbar-track {
-    background: #f5e4bf;
+    background: #f9e3ff;
     border-radius: 30px;
     margin: 3px 0px 3px 0px;
 
 }
 
 .bdy::-webkit-scrollbar-thumb {
-    background: linear-gradient(45deg, #ffae00, #ffee00);
+    background: linear-gradient(135deg, #d675ee, #8a6296);
     border-radius: 50px;
 }
   
 .bdy::-webkit-scrollbar-thumb:hover {
-    background: #ff5100;
+    background: linear-gradient(135deg, #df52d8, #67077a);
     cursor: pointer;
 }
 
 .recipe{
     max-width: 650px;
-    height: 65%;
+    height: 75%;
     border-radius: 25px;
     width: 100%;
     position: absolute;
@@ -157,14 +193,13 @@ input{
     top: 50%;
     transform: translate(-50%, -50%);
     padding: 20px;
-    background: rgba(235, 97, 5, 0.589);
-    border-radius: 16px;
+    background: #cf60a15e;
+    border-radius: 25px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(7.6px);
-    -webkit-backdrop-filter: blur(7.6px);
-    border: 2px solid #fff;
-    color: #fff;
-
+    backdrop-filter: blur(10.5px);
+    -webkit-backdrop-filter: blur(10.5px);
+    border: 1px solid rgb(255, 255, 255);    
+    color: #000000;
 }
 
 .close-box{
@@ -184,7 +219,107 @@ input{
     cursor: pointer;
 }
 
+.rec{
+    width: 620px;
+    height: 95%;
+    background-color: transparent;
+    overflow: scroll;
+}
+
 .cross:hover{
     background-color: #fff;
-    color: #F08700;
+    color: #630063;
+}
+
+.rec::-webkit-scrollbar {
+    width: 15px;
+
+}
+
+.rec::-webkit-scrollbar-track {
+    background: #d1a1d1be;
+    border-radius: 30px;
+    margin: 3px 0px 3px 0px;
+
+}
+
+.rec::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #d675ee, #8a6296);
+    border-radius: 50px;
+}
+  
+.rec::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #df52d8, #67077a);
+    cursor: pointer;
+}
+
+@media (max-width: 1244px){
+    .recipi-card{
+        width: 300px;
+        height: 430px;
+    }
+}
+
+@media (max-width: 768px){
+    .recipi-card{
+        width: 250px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 682px){
+    .bdy{
+        padding: 25px;
+        gap: 25px;
+    }
+
+    .recipe{
+        max-width: 350px;
+        padding: 20px;
+    }    
+
+    .rec{
+        width: 320px;
+    }
+
+    .header h2{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 451px){
+    .recipi-card{
+        width: 300px;
+        height: 350px;
+    }
+
+    .bdy{
+        padding: 25px;
+        gap: 30px;
+    }
+
+    .search-box{
+        background-color: #fff;
+        border-radius: 25px;
+        width: 300px;
+        height: 60px;
+    }
+
+    .header{
+        padding: 40px 0px 20px 0px;
+    }
+
+    .recipe{
+        max-width: 320px;
+        padding: 20px;
+    } 
+    
+    .rec{
+        width: 250px;
+    }
+
+    .bdy img{
+        width: 278px;
+        height: 210px;
+    }
 }

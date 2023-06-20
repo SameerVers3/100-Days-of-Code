@@ -9,22 +9,26 @@
 </head>
 <body id="button-group">
     <div class="header">
+        <h2>Search recipe by main Ingredient</h2>
         <div class="search-box">
             <input class="input-box" id="searchBox" type="text" placeholder="Enter main ingredient">
             <button class="search-btn" id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
     </div>
     <div class="bdy" id="bdy">
-        
+        <div class="not-found">
+            <img src="404.png" alt="">
+            <h3>Recipe Not Found</h3>
+        </div>
     </div>
 
     <div class="recipe" id="box">
         <div class="close-box" id="cl">
-            <button class="cross"><i class="fa-sharp fa-solid fa-xmark"></i></button>
+            <button class="cross" id="close"><i class="fa-sharp fa-solid fa-xmark"></i></button>
         </div>
-        <h2>ingredients</h2>
+        <div class="rec" id="rec">
+        </div>        
     </div >
-
     <script src="https://kit.fontawesome.com/af3dbed821.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
