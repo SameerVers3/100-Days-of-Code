@@ -50,5 +50,5 @@ body{
 }
 
 .dragging :where(.details, i){
-    opacity: 0;
+    opacity: 0.4;
 }

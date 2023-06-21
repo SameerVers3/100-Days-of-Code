@@ -12,6 +12,7 @@ items.forEach(item => {
 });
 
 const sort = (e) => {
+    e.preventDefault();
      const draggingItem = list.querySelector(".dragging");
  
      const siblings = [...list.querySelectorAll(".card:not(.dragging)")];
