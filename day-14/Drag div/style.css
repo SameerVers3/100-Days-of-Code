@@ -13,7 +13,7 @@ body{
 
 .drag-div{
     background-color: white;
-    width: 450;
+    width: 450px;
     top: 50%;
     left: 50%;
     position: absolute;
@@ -28,6 +28,11 @@ body{
     font-weight: 600;
     text-align: center;
     margin: 15px;
+}
+
+.active{
+    cursor: move;
+    user-select: none;
 }
 
 .bdy{
