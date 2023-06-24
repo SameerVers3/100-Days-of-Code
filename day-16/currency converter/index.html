@@ -9,18 +9,24 @@
 <body>
     <div class="container">
 
+        <h2>Currency Converter</h2>
         <div class="input-box">
-            <input type="number">
+            <input type="number" placeholder="Enter Value" id="in">
         </div>
 
         <div class="exchange">
-            <select name="currency" id="" class="curr"></select>
+            <select name="currency" id="curr1" class="curr">
+            </select>
             <div class="icon">
-                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                <i class="fa-solid fa-arrow-right-arrow-left" id = "swap-btn"></i>
             </div>
-            <select name="to-currency" id="" class="curr"></select>
+            <select name="to-currency" id="curr2" class="curr"></select>
         </div>
-
+        <p id="rate"></p>
+        <div class="input-box result" id="total">
+            
+        </div>
+        <button class = "btn" id="btn">Convert</button>
     </div>
     <script src="https://kit.fontawesome.com/af3dbed821.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
