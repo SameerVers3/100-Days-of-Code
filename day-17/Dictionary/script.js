@@ -35,7 +35,7 @@ async function render(){
     body.appendChild(head);
     // displaying body 
 
-    for(let i=0; i<data[0].meanings.length;( i++)){
+    for(let i=0; i<data[0].meanings.length; i++){
         let def = document.createElement("div");
         def.classList.add("def");
 
@@ -46,7 +46,8 @@ async function render(){
         for (let j=0; j<data[0].meanings[i].definitions.length; j++){
             let defination = document.createElement("p");
             defination.classList.add("defination");
-            defination.textContent = data[0].meanings[i].definitions[j];
+            defination.textContent = data[0].meanings[i].definitions[j].definition
+            console.log(defination)
             def.appendChild(defination);
         }
 

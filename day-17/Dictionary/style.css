@@ -14,14 +14,16 @@ body{
     justify-content: center;
     align-items: center;
     background: linear-gradient(135deg, #ffe7fc, rgb(160, 217, 255));
+    
 }
 
 .container{
     padding: 20px;
     background-color: #fff;
     border-radius: 20px;
-    min-width: 400px;
+    width: 400px;
     min-height: 100px;
+    max-height: 75%;
 }
 
 header{
@@ -94,6 +96,14 @@ header{
 .head .audio:hover{
     color: #fff;
     background-color: #888888; 
+}
+
+.bdy{
+    width: 100%;
+    /* min-height: 100px; */
+    max-height: 400px;
+    overflow-y: scroll;
+    /* max-width: ; */
 }
 
 .def{
