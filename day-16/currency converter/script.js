@@ -51,7 +51,6 @@ function swap(){
     let temp = curr1.selectedIndex;
     curr1.selectedIndex = curr2.selectedIndex;
     curr2.selectedIndex = temp;
-
     updateRate();
     calculate();
 }
