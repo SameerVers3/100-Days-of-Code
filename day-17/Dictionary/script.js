@@ -10,6 +10,10 @@ let audio;
 async function render(){
     let word = input.value;
     
+    let load = document.createElement("div")
+    laod.innerHTML =`<i class="fa-solid fa-bars-progress fa-bounce"></i>`
+    load.classList.add("load")
+    
     const data = await fetch(`${baseApi}${word}`).then(response => response.json());
 
     console.log(data);
@@ -25,8 +29,14 @@ async function render(){
     ad.innerHTML = `<button onclick="audio.play()"><i class="fa-solid fa-headphones"></i></button>`
 
     wrd.textContent = data[0].word;
-    p.textContent = data[0].phonetics[0].text;
-    audio = new Audio(data[0].phonetics[0].audio);
+    p.textContent = data[0].phonetics[1].text;
+
+    if (data[0].phonetics[0].audio === ""){
+        audio = new Audio(data[0].phonetics[1].audio);
+    }
+    else {
+        audio = new Audio(data[0].phonetics[0].audio);
+    }
 
     head.appendChild(wrd);
     head.appendChild(p);
@@ -42,15 +52,47 @@ async function render(){
         let nTitle = document.createElement("h2")
         nTitle.textContent = data[0].meanings[i].partOfSpeech
 
-        def.appendChild(nTitle);
+        def.appendChild(nTitle)
+        let title = document.createElement("p")
+        title.textContent = "Defination: "
+        title.classList.add("ex-title")
+        def.appendChild(title)
         for (let j=0; j<data[0].meanings[i].definitions.length; j++){
             let defination = document.createElement("p");
             defination.classList.add("defination");
-            defination.textContent = data[0].meanings[i].definitions[j].definition
+            defination.textContent = `- "${data[0].meanings[i].definitions[j].definition}"`
             console.log(defination)
             def.appendChild(defination);
         }
 
+
+        if (!(data[0].meanings[i].synonyms.length === 0)){
+            title.textContent = "Synonyms: "
+            def.appendChild(title)
+
+            let synonyms = document.createElement("p");
+            for (let j=0; j<data[0].meanings[i].synonyms.length ; j++){
+                synonyms.textContent += `"${data[0].meanings[i].synonyms[j]}" , `
+            }
+
+            def.appendChild(synonyms);
+        }
+
+        if (data[0].meanings[i].antonyms.length > 0){
+            let at = document.createElement("p")
+            at.classList.add("ex-title")
+
+            at.textContent = "Antonyms: "
+            def.appendChild(at)
+
+            let antonyms = document.createElement("p");
+            for (let j=0; j<data[0].meanings[i].antonyms.length ; j++){
+                antonyms.textContent += `"${data[0].meanings[i].antonyms[j]}" , `
+            }
+
+            def.appendChild(antonyms);
+        }
+        
         body.appendChild(def);
     }
 
