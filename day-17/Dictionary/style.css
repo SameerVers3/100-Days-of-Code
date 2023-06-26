@@ -24,6 +24,7 @@ body{
     width: 400px;
     min-height: 100px;
     max-height: 75%;
+    box-shadow: 10px 10px 15px #00000054;
 }
 
 header{
@@ -111,8 +112,9 @@ header{
 .bdy{
     width: 100%;
     /* min-height: 100px; */
-    max-height: 400px;
+    max-height: 200px;
     /* max-width: ; */
+    overflow-y: scroll;
 }
 
 .def{
@@ -147,4 +149,19 @@ button{
     background-color: transparent;
     width: 100%;
     border: none;
+}
+
+.not-found{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    font-weight: 600;
+    color: #888888;
+}
+
+.not-found img{
+    height: 130px;
+    width: 150px;
 }

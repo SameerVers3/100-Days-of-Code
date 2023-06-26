@@ -8,16 +8,27 @@ const baseApi = `https://api.dictionaryapi.dev/api/v2/entries/en/`
 let audio;
 
 async function render(){
+    body.innerHTML = ""
     let word = input.value;
     
     let load = document.createElement("div")
-    laod.innerHTML =`<i class="fa-solid fa-bars-progress fa-bounce"></i>`
+    load.innerHTML =`<i class="fa-solid fa-bars-progress fa-bounce"></i>`
     load.classList.add("load")
-    
+    body.appendChild(load)
     const data = await fetch(`${baseApi}${word}`).then(response => response.json());
 
+    if (data.title === "No Definitions Found"){
+        body.innerHTML = ""
+        let nf = document.createElement("div");
+        nf.classList.add("not-found")
+        nf.innerHTML = `<img src="404.png" alt="" srcset="">
+                        <p>Not Found</p>`
+        body.appendChild(nf);
+        return
+    }
     console.log(data);
 
+    body.innerHTML = ""
     // displaying head
     let head = document.createElement("div");
     head.classList.add("head");
@@ -100,9 +111,9 @@ async function render(){
 
 searchBtn.addEventListener("click", render);
 
-searchBtn.addEventListener("keypress", function(e){
+input.addEventListener("keypress", function(e){
     if (e.key === "Enter"){
-        e.preventDefault();
-        render();
+        e.preventDefault()
+        render()
     }
 })
