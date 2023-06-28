@@ -21,6 +21,10 @@ body{
     background-color: rgb(254, 255, 196);
     border: 2px solid ;
     box-shadow: 10px 10px 0px #8a8800b9;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 7px;
 }
 
 header{
@@ -33,6 +37,7 @@ header{
     font-weight: 600;
     color: rgb(0, 88, 62);
     text-align: center;
+    width: 100%;
 }
 
 .body{
@@ -57,7 +62,7 @@ header{
     font-size: 18px;
     font-weight: 600;
     padding: 10px;
-    
+
 }
 
 .body button{
@@ -66,5 +71,11 @@ header{
     height: 50px;
     width: 120px;
     background: linear-gradient(135deg, rgb(109, 116, 39), rgb(135, 146, 7));
-    color: rgb(255, 255, 255);/
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+button:hover{
+    background: linear-gradient(135deg, rgb(185, 196, 65), rgb(162, 175, 15));
 }
