@@ -12,11 +12,12 @@ body{
     height: 100vh;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     flex-direction: column;
     background: #fff;
 }
 
-.head{
+.heading{
     height: 200px;
     width: 100%;
     background: #ec3f53;
@@ -26,6 +27,7 @@ body{
     font-weight: 1000;
     display: flex;
     justify-content: center;
+    transition: height 2s;
 }
 
 .login{
@@ -62,4 +64,78 @@ body{
 
 .logBtn:hover{
     background-color: #ec3f53;
+}
+
+
+.chat-box{
+    /* background-color: #ec3f53; */
+    height: 450px;
+    width: 450px;
+    padding: 30px;
+    margin-top: 40px;
+    /* border: 1px solid #eb7280; */
+    border-radius: 10px;
+}
+
+.send{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 400px;
+    gap: 10px;
+    padding: 10px;
+    border-top: 5px dashed #ec3f53;
+}
+
+.send-txt{
+    border: none;
+    outline: none;
+    width: 100%;
+    border: 2px solid #eb7280;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 15px;
+}
+
+.send-icon{
+    color: #ec3f53;
+    font-size: 18px;
+    cursor: pointer;
+    width: 50px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+
+}
+
+.send-icon:hover{
+    background-color: #ec3f53;
+    color: #fff;
+}
+
+.logout{
+    margin-top: 50px;
+    color: #d3273b;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+ul{
+    list-style: none;
+}
+
+.name{
+    color: #d3273b;
+    font-weight: 600;
+}
+
+li{
+    margin-bottom: 5px;
+    background: #5555550a;
+    border-radius: 10px;
+    padding: 10px;
+    float: left;
+    clear: left;
 }
