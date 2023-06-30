@@ -75,6 +75,8 @@ body{
     margin-top: 40px;
     /* border: 1px solid #eb7280; */
     border-radius: 10px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
 .send{
@@ -135,9 +137,11 @@ li{
     margin-bottom: 5px;
     background: #5555550a;
     border-radius: 10px;
+    max-width: 370px;
     padding: 10px;
     float: left;
     clear: left;
+    overflow-wrap: break-word;
 }
 
 .bdy{

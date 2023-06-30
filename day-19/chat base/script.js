@@ -2,6 +2,7 @@ const logBtn = document.getElementById("logBtn");
 const header = document.getElementById("heading");
 
 const bdy = document.getElementById("bdy");
+let msgCount = 0;
 
 // paste your firebase config here
 
@@ -50,6 +51,11 @@ const renderChatPage = () => {
     bdy.innerHTML = "";
     let chatBox = document.createElement("div");
     chatBox.classList.add("chat-box");
+    chatBox.id = "cb";
+
+    let ul = document.createElement("ul");
+    ul.id = "ul";
+    chatBox.appendChild(ul);
 
     let sendBox = document.createElement("div");
     sendBox.classList.add("send")
@@ -74,13 +80,90 @@ const renderChatPage = () => {
     bdy.appendChild(chatBox);
     bdy.appendChild(sendBox);
     bdy.appendChild(logout);
+    renderMessage();
 }
 
 const renderMessage = () => {
 
+    let ul = document.getElementById("ul");
+
+    ul.innerHTML = "";
+    db.ref('chats').orderByChild('index').once('value').then(function(messageObject){
+        
+        // console.log(messageObject);
+
+        messageObject.forEach((msg) => {
+            // console.log(msg);
+            let message = msg.val();
+
+            let li = document.createElement("li");
+            let name = document.createElement("p")
+            name.classList.add("name");
+
+            let ms = document.createElement("p");
+            ms.classList.add("message");
+
+            name.textContent = message.name;
+            ms.textContent = message.message;
+
+            li.appendChild(name);
+            li.appendChild(ms);
+
+            ul.appendChild(li);
+
+        });
+        updateScroll();
+    })
+}
+
+const updateMessage = () => {
+    db.ref('chats').once('value', function(snapshot) {
+        let count = snapshot.numChildren();
+        if (count > msgCount){
+            renderUpdatedMessage(msgCount);
+            msgCount = count;
+        } else{
+            return
+        }
+    })
+}
+
+const renderUpdatedMessage = (c) => {
+    db.ref('chats').orderByChild('index').once('value').then(function(messageObject){
+        
+        // console.log(messageObject);
+
+        messageObject.forEach((msg) => {
+            // console.log(msg);
+            let message = msg.val();
+
+            if (message.index > c){
+                let li = document.createElement("li");
+                let name = document.createElement("p")
+                name.classList.add("name");
+
+                let ms = document.createElement("p");
+                ms.classList.add("message");
+
+                name.textContent = message.name;
+                ms.textContent = message.message;
+
+                li.appendChild(name);
+                li.appendChild(ms);
+
+                ul.appendChild(li);
+            }
+        });
+        updateScroll();
+    })
 }
 
 const sendMessage = (message) => {
+
+    if(message === ""){
+        return;
+    }
+
     if (localStorage.getItem("name") === null || message === null) {
       console.log("null");
       return;
@@ -95,10 +178,14 @@ const sendMessage = (message) => {
         message: message,
         index: index
       })
-      .then(renderMessage);
+      .then(function(){
+        let input = document.getElementById("txt-box");
+        input.value = "";
+      });
     });
-  };
+};
   
+setInterval
 
 const checkSession = () => {
     // localStorage.clear();
@@ -128,6 +215,11 @@ const logout = () => {
     renderLoginPage();
 }
 
+const updateScroll = () => {
+    let e = document.getElementById("cb");
+    e.scrollTop = e.scrollHeight;
+}
+
 checkSession();
 
 document.addEventListener("click", function(e){
@@ -152,3 +244,18 @@ document.addEventListener("click", function(e){
         sendMessage(message);
     }
 })
+
+document.addEventListener("keypress", function(e){
+    if (e.target.id === "txt-box"){
+        if (e.key === "Enter"){
+            e.preventDefault()
+            let input = document.getElementById("txt-box");
+            let message = input.value;
+            
+            console.log(message);
+            sendMessage(message);
+        }
+    }
+})
+
+setInterval(updateMessage, 1);
