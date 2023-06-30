@@ -1,11 +1,17 @@
 const logBtn = document.getElementById("logBtn");
-const logInput = document.getElementById("log-input");
 const header = document.getElementById("heading");
 
 const bdy = document.getElementById("bdy");
 
+// paste your firebase config here
+
+firebase.initializeApp(firebaseConfig);
+let db = firebase.database();
+ 
+
+
 const renderLoginPage = () => {
-    console.log(header);
+    header.style.height = "200px";
     bdy.innerHTML = "";
 
     let login = document.createElement("div");
@@ -38,31 +44,111 @@ const renderLoginPage = () => {
 
 }
 
+const renderChatPage = () => {
+    header.style.height = "80px"
+
+    bdy.innerHTML = "";
+    let chatBox = document.createElement("div");
+    chatBox.classList.add("chat-box");
+
+    let sendBox = document.createElement("div");
+    sendBox.classList.add("send")
+    let input = document.createElement("input");
+    input.placeholder = `${localStorage.getItem("name")} type something`;
+    input.classList.add("send-txt");
+    input.id = "txt-box"
+
+    let sendIcon = document.createElement("div");
+    sendIcon.classList.add("send-icon");
+    sendIcon.innerHTML = `<i class="fa-solid fa-paper-plane"></i>`;
+    sendIcon.id = "sendBtn"
+
+    sendBox.appendChild(input);
+    sendBox.appendChild(sendIcon);
+
+    let logout = document.createElement("div");
+    logout.classList.add("logout");
+    logout.id = "logout";
+    logout.textContent = `${localStorage.getItem("name")} ~ logout`
+
+    bdy.appendChild(chatBox);
+    bdy.appendChild(sendBox);
+    bdy.appendChild(logout);
+}
+
+const renderMessage = () => {
+
+}
+
+const sendMessage = (message) => {
+    if (localStorage.getItem("name") === null || message === null) {
+      console.log("null");
+      return;
+    }
+  
+    console.log("sending");
+    db.ref('chats/').once('value', function(message_object) {
+      var index = parseFloat(message_object.numChildren()) + 1;
+      var messageRef = db.ref('chats/' + `message_${index}`);
+      messageRef.set({
+        name: localStorage.getItem("name"),
+        message: message,
+        index: index
+      })
+      .then(renderMessage);
+    });
+  };
+  
+
 const checkSession = () => {
+    // localStorage.clear();
     if (localStorage.getItem("name") === null){
         renderLoginPage();
     }
     else{
         console.log("loged in")
-        renderLoginPage();
+        renderChatPage();
     }
 }
 
 const setUser = (value) => {
-    console.log("clicked")
-    let userName = value;
-    localStorage.setItem("name", userName);
-    // console.log(header);
-    // header.style.height = "100px";
-    // console.log(header.style.height);
+    if (value.length >= 3){
+        let userName = value;
+        localStorage.setItem("name", userName);
+        renderChatPage();
+    }
+    else{
+        alert("Name should be at least 3 characters")
+    }
+
+}
+
+const logout = () => {
+    localStorage.clear();
+    renderLoginPage();
 }
 
 checkSession();
-// logBtn.addEventListener("click", setUser)
 
-setTimeout(() => {
-    const logBtn = document.getElementById("logBtn");
-    const logInput = document.getElementById("log-input");
+document.addEventListener("click", function(e){
+    if (e.target.id === "logBtn"){
+        const logInput = document.getElementById("log-input");
+        setUser(logInput.value);
+    }
+})
 
-    logBtn.addEventListener("click", setUser(logInput.value))
-}, 1000);
+document.addEventListener("click", function(e){
+    if (e.target.id === "logout"){
+        logout();
+    }
+})
+
+document.addEventListener("click", function(e){
+    if (e.target.id === "sendBtn"){
+        let input = document.getElementById("txt-box");
+        let message = input.value;
+        
+        console.log(message);
+        sendMessage(message);
+    }
+})

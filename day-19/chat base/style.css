@@ -139,3 +139,10 @@ li{
     float: left;
     clear: left;
 }
+
+.bdy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
