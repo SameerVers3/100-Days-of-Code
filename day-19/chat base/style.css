@@ -28,6 +28,8 @@ body{
     display: flex;
     justify-content: center;
     transition: height 2s;
+    padding: 20px;
+    text-align: center;
 }
 
 .login{
@@ -40,7 +42,7 @@ body{
 
 .log-input{
     width: 350px;
-    height: 40px;
+    height: 60px;
     margin: 20px 0px;
     text-align: center;
     border-radius: 10px;
@@ -48,11 +50,13 @@ body{
     outline: #ec3f53;
     font-size: 20px;
     font-weight: 500;
+    display: flex;
+
 }
 
 .logBtn{
     height: 40px;
-    width: 100px;
+    width: 100%;
     border-radius: 10px;
     border: none;
     background-color: #eb7280;
@@ -87,6 +91,7 @@ body{
     gap: 10px;
     padding: 10px;
     border-top: 5px dashed #ec3f53;
+    margin-top: 7px;
 }
 
 .send-txt{
@@ -149,4 +154,33 @@ li{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+span{
+    margin-top: 30px;
+}
+
+span a{
+    text-decoration: none;
+}
+
+@media (max-width: 451px){
+    .heading{
+        height: 150px;
+        font-size: 20px;
+    }
+
+    .log-input{
+        width: 320px;
+    }
+
+    .chat-box{
+        padding: 5px;
+        width: 350px;
+    }
+
+    .send{
+        width: 350px;
+    }
+
 }

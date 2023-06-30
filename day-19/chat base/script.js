@@ -4,7 +4,9 @@ const header = document.getElementById("heading");
 const bdy = document.getElementById("bdy");
 let msgCount = 0;
 
-// paste your firebase config here
+
+// make a file env.js and setup your firebase configs there
+const firebaseConfig = window.env.API_SECRET;
 
 firebase.initializeApp(firebaseConfig);
 let db = firebase.database();
@@ -89,11 +91,8 @@ const renderMessage = () => {
 
     ul.innerHTML = "";
     db.ref('chats').orderByChild('index').once('value').then(function(messageObject){
-        
-        // console.log(messageObject);
 
         messageObject.forEach((msg) => {
-            // console.log(msg);
             let message = msg.val();
 
             let li = document.createElement("li");
@@ -130,11 +129,8 @@ const updateMessage = () => {
 
 const renderUpdatedMessage = (c) => {
     db.ref('chats').orderByChild('index').once('value').then(function(messageObject){
-        
-        // console.log(messageObject);
 
         messageObject.forEach((msg) => {
-            // console.log(msg);
             let message = msg.val();
 
             if (message.index > c){
@@ -165,11 +161,8 @@ const sendMessage = (message) => {
     }
 
     if (localStorage.getItem("name") === null || message === null) {
-      console.log("null");
       return;
     }
-  
-    console.log("sending");
     db.ref('chats/').once('value', function(message_object) {
       var index = parseFloat(message_object.numChildren()) + 1;
       var messageRef = db.ref('chats/' + `message_${index}`);
@@ -188,12 +181,10 @@ const sendMessage = (message) => {
 setInterval
 
 const checkSession = () => {
-    // localStorage.clear();
     if (localStorage.getItem("name") === null){
         renderLoginPage();
     }
     else{
-        console.log("loged in")
         renderChatPage();
     }
 }
@@ -229,6 +220,16 @@ document.addEventListener("click", function(e){
     }
 })
 
+document.addEventListener("keypress", function(e){
+    if (e.target.id === "log-input"){
+        if (e.key === "Enter"){
+            e.preventDefault()
+            const logInput = document.getElementById("log-input");
+            setUser(logInput.value);
+        }
+    }
+})
+
 document.addEventListener("click", function(e){
     if (e.target.id === "logout"){
         logout();
@@ -239,8 +240,6 @@ document.addEventListener("click", function(e){
     if (e.target.id === "sendBtn"){
         let input = document.getElementById("txt-box");
         let message = input.value;
-        
-        console.log(message);
         sendMessage(message);
     }
 })
@@ -252,7 +251,6 @@ document.addEventListener("keypress", function(e){
             let input = document.getElementById("txt-box");
             let message = input.value;
             
-            console.log(message);
             sendMessage(message);
         }
     }
