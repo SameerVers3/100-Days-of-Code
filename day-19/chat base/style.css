@@ -183,4 +183,7 @@ span a{
         width: 350px;
     }
 
+    li{
+        max-width: 330px;
+    }
 }
