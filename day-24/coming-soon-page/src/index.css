@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+  background-image: url("./images/background.png");
+  background-color: rgba(0, 0, 0, 0.226);
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 23px;
+  padding: 5px 30px;
+  margin: 10px 100px;
+  background: rgba(244, 128, 255, 0.295);
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(187, 63, 170, 0.425);
+  backdrop-filter: blur(7.4px);
+  -webkit-backdrop-filter: blur(7.4px);
+}
+
+.logo{
+  padding: 10px;
+}
+
+
+.logo img{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+ul{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  font-size: 25px;
+  font-weight: 700;
+  color: rgba(237, 44, 255, 0.938);
+}
+
+li:hover{
+  color: #FF00FF;
+}
+
+.btn{
+  border: none;
+  padding: 15px;
+  border-radius: 25px;
+  font-size: 18px;
+  color: #fff;
+  font-weight: 600;
+  background: rgba(223, 0, 243, 0.938);
+  border-radius: 16px;
+  box-shadow: 0 4px 5px rgba(180, 25, 219, 0.986);
+  backdrop-filter: blur(7.4px);
+  -webkit-backdrop-filter: blur(7.4px);
+  cursor: pointer;
+}
+
+.btn:hover{
+  background: rgba(178, 24, 192, 0.938);
+  box-shadow: 0 0 10px rgba(229, 124, 255, 0.986);
+}
