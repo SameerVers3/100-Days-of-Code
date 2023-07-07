@@ -14,6 +14,9 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  /* display: flex;
+  justify-content: center; */
+  /* align-items: center; */
 
 }
 
@@ -75,4 +78,49 @@ li:hover{
 .btn:hover{
   background: rgba(178, 24, 192, 0.938);
   box-shadow: 0 0 10px rgba(229, 124, 255, 0.986);
+}
+
+.main{
+  position: absolute;
+  top: 50%; right: 50%;
+  transform: translate(50%,-50%);
+  padding: 50px;
+  background-color: #fff;
+  border-radius: 25px;
+}
+
+.heading {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  background-color: #d8d8d8;
+  border-radius: 30px;
+  width: 300px;
+  margin: 20px;
+}
+
+.container span{
+  padding: 0px 10px;
+  font-size: 25px;
+  border-radius: 30px;
+}
+.form{
+  border: none;
+  padding: 30px;
+  background-color: #f1f1f1;
+  border-radius: 30px;
+  width: 260px;
+  outline:none;
+}
+
+.hd{
+  font-size: 40px;
+  text-align: center;
+  color: #fff;
 }
