@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(255, 255, 255);
+}
+
+.container{
+  background-color: #fff;
+}
+
+.nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 200px;
+  background: linear-gradient(135deg, #680a6b, #bb1cc0);
+  color: #fff;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.para{
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px;
+}
+
+.input-box{
+  padding: 25px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px
+}
+
+.in{
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+}
+
+.in input{
+  outline: none;
+  border: 1px solid rgb(199, 199, 199);
+  box-shadow: 0 0 5px #bae3ff;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+.btn{
+  border: none;
+  padding: 15px;
+  font-size: 17px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #a222a7, #e00ee7);
+}
+
+.btn:hover{
+  background: linear-gradient(135deg, #88168b, #990b9e);  
+  box-shadow: 0 0 5px #e421eb;
+}
