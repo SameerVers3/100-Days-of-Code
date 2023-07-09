@@ -13,10 +13,12 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(255, 255, 255);
+    background: rgb(165, 162, 162);
+    
 }
 
 .container{
+  
   background-color: #fff;
 }
 
@@ -34,7 +36,7 @@ main {
 }
 
 .header--image {
-  height: 100%;
+  max-height: 500px;
   margin-right: 6px;
 }
 
