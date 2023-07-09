@@ -1,14 +1,15 @@
 import React from "react"
-import image from "../images/icon.png"
 
-export default function Nav(){
-    return(
-        <nav className="nav">
-            <div className="logo">
-                <img src={image} alt="logo" />
-                <h3>Meme Generator</h3>
-            </div>
-            <p className="para">Have fun</p>
-        </nav>
+export default function Header() {
+    return (
+        <header className="header">
+            <img 
+                src="../images/icon.png" 
+                className="header--image"
+                alt="icon"
+            />
+            <h2 className="header--title">Meme Generator</h2>
+            <h4 className="header--project">React Course - Project 3</h4>
+        </header>
     )
 }
