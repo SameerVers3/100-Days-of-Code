@@ -33,9 +33,38 @@ body{
   color: #fff;
   background-color: var(--secondary-color);
   border-radius: 10px;
+  transition: background-color 300ms;
 }
 
 .icons:hover{
   box-shadow: 0 0 10px rgba(64, 79, 83, 0.575);
   background-color: var(--hover);
+}
+
+.dropdown{
+  position: absolute;
+  width: 100px;
+  margin-top: 10px;
+  padding: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-item{
+
+  border-radius: 16px;
+  transition: background-color 300ms;
+  color: #fff;
+  font-style: none;
+  text-decoration: none;
+}
+
+.menu-item:hover{
+  background-color: var(--hover);
+}
+
+.hello{
+  padding: 100px;
 }
