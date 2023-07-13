@@ -1,16 +1,38 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Search from "./conponents/SearchTab"
+import PokeCard from './conponents/PokeCard';
 
 
 function App() {
 
   const [allPokemon, setPokemon] = useState([]);
-  const 
+  const [loadMore, setLoadMore] = useState("https://pokeapi.co/api/v2/pokemon?limit=20")
 
-  const getPokemon = async() => {
-    const pokeData = await fetch()
+
+  const getPokemon = async () => {
+    const res = await fetch(loadMore)
+    const pokeData = await res.json()
+
+    setLoadMore(pokeData.next)
+
+    function createPokemonArray(result) {
+      result.forEach( async (pokemon) => {
+        
+        const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
+        const data = await res.json()
+ 
+        setPokemon(prevPoke => [...prevPoke, data])
+      })
+    }
+
+    createPokemonArray(pokeData.results)
+    await console.log(allPokemon)
   }
+
+  useEffect(() => {
+    getPokemon();
+  }, [])
 
   return (
     <div>
@@ -21,10 +43,12 @@ function App() {
       <div className="container">
         <div className="pokemon-container">
           <div className="all-container">
-            <h2>Helow orld</h2>
+            {allPokemon.map(pokemon => {
+              return <PokeCard data={pokemon}/>
+            })}
           </div>
-          <button className='load-more'>Load More</button>
         </div>
+        <button className='load-more'>Load More</button>
       </div>
     </div>
   );

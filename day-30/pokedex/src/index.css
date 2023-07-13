@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
 *{
   padding: 0px;
   margin: 0px;
@@ -6,6 +8,7 @@
 
 body{
   align-items: center;
+  font-family: 'Varela Round', sans-serif;
 }
 
 .header{
@@ -19,12 +22,20 @@ body{
 
 .container{
   width: 100vw;
-  background-color: aqua;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
+.all-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0px 50px;
+}
 
 .nav{
   padding: 4px 4px;
@@ -51,4 +62,60 @@ body{
 }
 .search-btn:hover{
   background-color: rgba(206, 205, 205, 0.527);
+}
+
+.card-container{
+  background-color: #fff;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding: 5px; */
+  border-radius: 15px;
+  gap: 3px;
+  max-width: 200px;
+  max-height: 400px;
+  box-shadow: 5px 5px 15px #dadada;
+  padding-bottom: 10px;
+  transition: transform 200ms;
+  cursor: pointer;
+}
+
+.load-more{
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #000;
+  margin: 40px;
+  cursor: pointer;
+}
+
+.load-more:hover{
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 15px #cccccc;
+}
+.img-container{
+  background-color: antiquewhite;
+  width: 180px;
+  height: 220px;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  margin: 10px;
+  flex-direction: column;
+}
+
+.img-container img{
+  max-width: 150px;
+  max-height: 220px;
+  object-fit: cover;
+}
+
+.card-container:hover{
+  transform: translate(-4px, -3px);
+  box-shadow: 5px 5px 15px #cccccc;
 }
