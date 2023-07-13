@@ -1,8 +1,17 @@
+import { useState } from 'react';
 import './App.css';
 import Search from "./conponents/SearchTab"
 
 
 function App() {
+
+  const [allPokemon, setPokemon] = useState([]);
+  const 
+
+  const getPokemon = async() => {
+    const pokeData = await fetch()
+  }
+
   return (
     <div>
       <div className='header'>

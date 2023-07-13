@@ -12,6 +12,8 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  padding: 10px;
   top: 0;
 }
 
@@ -23,3 +25,30 @@ body{
   align-items: center;
 }
 
+
+.nav{
+  padding: 4px 4px;
+  margin: 25px;
+  display: flex;
+  gap: 3px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px #dadada;
+}
+
+.search-bar{
+  border: none;
+  padding: 10px;
+  border-radius: 15px;
+  outline: none;
+}
+
+.search-btn{
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+}
+.search-btn:hover{
+  background-color: rgba(206, 205, 205, 0.527);
+}
