@@ -1,0 +1,25 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body{
+  align-items: center;
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+}
+
+.container{
+  width: 100vw;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
