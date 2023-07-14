@@ -1,10 +1,25 @@
-import React from "react"
+import React, { useState } from "react"
+import DetailCard from "./DetailCard";
 
 export default function PokeCard(PokeData){
 
+    const [show, setShow] = useState(false);
+
+    const displayDetails =  () => {
+        setShow(prev => {
+            !prev ? document.body.classList.add('active') : document.body.classList.remove('active')
+            return !prev
+        });
+    }
+
+    const getBackground = () => {
+        return `img-container ${PokeData.data.types[0].type.name}`
+    }
+
     return (
-         <div className="card-container">
-            <div className="img-container">
+        <>
+         <div className="card-container" onClick={() => displayDetails()}>
+            <div className={getBackground()}>
             <div className="number">
                 <small>#0{PokeData.data.id}</small>
             </div>
@@ -15,5 +30,7 @@ export default function PokeCard(PokeData){
                 <small>Type:{PokeData.data.types.map(type => type.type.name + " ")}</small>
             </div>
          </div>
+         {show && <DetailCard />}
+         </>
     )
 }   

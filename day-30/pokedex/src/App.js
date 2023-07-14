@@ -14,8 +14,6 @@ function App() {
     const res = await fetch(loadMore)
     const pokeData = await res.json()
 
-    setLoadMore(pokeData.next)
-
     function createPokemonArray(result) {
       result.forEach( async (pokemon) => {
         
@@ -27,7 +25,7 @@ function App() {
     }
 
     createPokemonArray(pokeData.results)
-    await console.log(allPokemon)
+    setLoadMore(pokeData.next)
   }
 
   useEffect(() => {
@@ -48,7 +46,7 @@ function App() {
             })}
           </div>
         </div>
-        <button className='load-more'>Load More</button>
+        <button className='load-more' onClick={() => getPokemon()}>Load More</button>
       </div>
     </div>
   );

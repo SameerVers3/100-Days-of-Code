@@ -9,6 +9,7 @@
 body{
   align-items: center;
   font-family: 'Varela Round', sans-serif;
+  position: relative;
 }
 
 .header{
@@ -97,7 +98,6 @@ body{
   box-shadow: 5px 5px 15px #cccccc;
 }
 .img-container{
-  background-color: antiquewhite;
   width: 180px;
   height: 220px;
   object-fit: cover;
@@ -118,4 +118,97 @@ body{
 .card-container:hover{
   transform: translate(-4px, -3px);
   box-shadow: 5px 5px 15px #cccccc;
+}
+
+.overlay{
+  position: fixed;
+  top:0;
+  left:0;
+  background:rgba(0, 0, 0, 0.349);
+  z-index:10;
+  width:100vw;
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active {
+  overflow: hidden;
+}
+
+.card{
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.normal{
+  background: linear-gradient(180deg, #a8a878, #fff);
+}
+
+.grass{
+  background: linear-gradient(180deg, #78c850, #fff);
+}
+
+.fire{
+  background: linear-gradient(180deg, #f08030, #fff);
+}
+
+.fighting{
+  background: linear-gradient(180deg, #c03028, #fff);
+}
+
+.water{
+  background: linear-gradient(180deg, #6890f0, #fff);
+}
+
+.flying{
+  background: linear-gradient(180deg, #a890f0, #fff);
+}
+
+.poison{
+  background: linear-gradient(180deg, #a040a0, #fff);
+}
+
+.electric{
+  background: linear-gradient(180deg, #f8d030, #fff);
+}
+
+.ground{
+  background: linear-gradient(180deg, #e0c068, #fff);
+}
+
+.psychic{
+  background: linear-gradient(180deg, #f85888, #fff);
+}
+
+.ice{
+  background: linear-gradient(180deg, #98d8d8, #fff);
+}
+
+.bug{
+  background: linear-gradient(180deg, #a8b820, #fff);
+}
+
+.bug{
+  background: linear-gradient(180deg, #7038f8, #fff);
+}
+
+.ghost{
+  background: linear-gradient(180deg, #705898, #fff);
+}
+
+.dark{
+  background: linear-gradient(180deg, #705848, #fff);
+}
+
+.steel{
+  background: linear-gradient(180deg, #b8b8d0, #fff);
+}
+
+.fairy{
+  background: linear-gradient(180deg, #ee99ac, #fff);
 }
