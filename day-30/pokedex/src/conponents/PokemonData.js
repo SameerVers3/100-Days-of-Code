@@ -33,7 +33,7 @@ export default function PokeCard(PokeData){
                 <Type typ={PokeData.data.types}/>
             </div>
          </div>
-         {show && <DetailCard Data={PokeData}/>}
+         {show && <DetailCard data={PokeData.data}/>}
          </>
     )
 }   

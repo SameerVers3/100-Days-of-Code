@@ -42,7 +42,7 @@ function App() {
         <div className="pokemon-container">
           <div className="all-container">
             {allPokemon.map(pokemon => {
-              return <PokeCard data={pokemon}/>
+              return <PokeCard data={pokemon} key={pokemon.id}/>
             })}
           </div>
         </div>

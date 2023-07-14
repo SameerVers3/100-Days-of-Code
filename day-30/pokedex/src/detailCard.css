@@ -1,0 +1,14 @@
+.cross{
+    font-size: 23px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 2px;
+    left: 2px;
+    transition: transform 300ms;
+}
+
+.cross:hover{
+    transform: rotate(-90deg);
+}
