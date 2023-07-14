@@ -1,0 +1,167 @@
+
+
+.normal{
+    background: linear-gradient(180deg, #a8a878, #fff);
+  }
+  
+  .grass{
+    background: linear-gradient(180deg, #78c850, #fff);
+  }
+  
+  .fire{
+    background: linear-gradient(180deg, #f08030, #fff);
+  }
+  
+  .fighting{
+    background: linear-gradient(180deg, #c03028, #fff);
+  }
+  
+  .water{
+    background: linear-gradient(180deg, #6890f0, #fff);
+  }
+  
+  .flying{
+    background: linear-gradient(180deg, #a890f0, #fff);
+  }
+  
+  .poison{
+    background: linear-gradient(180deg, #a040a0, #fff);
+  }
+  
+  .electric{
+    background: linear-gradient(180deg, #f8d030, #fff);
+  }
+  
+  .ground{
+    background: linear-gradient(180deg, #e0c068, #fff);
+  }
+  
+  .psychic{
+    background: linear-gradient(180deg, #f85888, #fff);
+  }
+  
+  .ice{
+    background: linear-gradient(180deg, #98d8d8, #fff);
+  }
+  
+  .bug{
+    background: linear-gradient(180deg, #a8b820, #fff);
+  }
+  
+  .bug{
+    background: linear-gradient(180deg, #7038f8, #fff);
+  }
+  
+  .ghost{
+    background: linear-gradient(180deg, #705898, #fff);
+  }
+  
+  .dark{
+    background: linear-gradient(180deg, #705848, #fff);
+  }
+  
+  .steel{
+    background: linear-gradient(180deg, #b8b8d0, #fff);
+  }
+  
+  .fairy{
+    background: linear-gradient(180deg, #ee99ac, #fff);
+  }
+
+  .normal-icon {
+    background-color: #a8a878;
+  }
+  
+  .grass-icon {
+    background-color: #78c850;
+  }
+  
+  .fire-icon {
+    background-color: #f08030;
+  }
+  
+  .fighting-icon {
+    background-color: #c03028;
+  }
+  
+  .water-icon {
+    background-color: #6890f0;
+  }
+  
+  .flying-icon {
+    background-color: #a890f0;
+  }
+  
+  .poison-icon {
+    background-color: #a040a0;
+  }
+  
+  .electric-icon {
+    background-color: #f8d030;
+  }
+  
+  .ground-icon {
+    background-color: #e0c068;
+  }
+  
+  .psychic-icon {
+    background-color: #f85888;
+  }
+  
+  .ice-icon {
+    background-color: #98d8d8;
+  }
+  
+  .bug-icon {
+    background-color: #a8b820;
+  }
+  
+  .rock-icon {
+    background-color: #b8a038;
+  }
+  
+  .ghost-icon {
+    background-color: #705898;
+  }
+  
+  .dark-icon {
+    background-color: #705848;
+  }
+  
+  .steel-icon {
+    background-color: #b8b8d0;
+  }
+  
+  .fairy-icon {
+    background-color: #ee99ac;
+  }
+  
+  
+
+.types{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 2px;
+    margin: 5px;
+}
+
+.icon{
+    border-radius: 50%;
+    padding: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 5px #00000070;
+}
+
+.icon:hover{
+    transform: translate(-0.5px, -0.5px);
+    box-shadow: 5px 5px 10px #b4b4b4;
+}
+
+.icon img{
+    height: 20px;
+    width: 20px;
+}

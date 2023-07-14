@@ -1,5 +1,7 @@
 import React, { useState } from "react"
 import DetailCard from "./DetailCard";
+import "../poketype.css"
+import Type from "./Type";
 
 export default function PokeCard(PokeData){
 
@@ -20,14 +22,15 @@ export default function PokeCard(PokeData){
         <>
          <div className="card-container" onClick={() => displayDetails()}>
             <div className={getBackground()}>
-            <div className="number">
-                <small>#0{PokeData.data.id}</small>
-            </div>
+                <div className="number">
+                    <h2>#0{PokeData.data.id}</h2>
+                </div>
             <img src={PokeData.data.sprites.other.dream_world.front_default} alt={PokeData.data.species.name} />
             </div>
             <div className="details">
                 <h3>{PokeData.data.species.name}</h3>
-                <small>Type:{PokeData.data.types.map(type => type.type.name + " ")}</small>
+
+                <Type typ={PokeData.data.types}/>
             </div>
          </div>
          {show && <DetailCard />}

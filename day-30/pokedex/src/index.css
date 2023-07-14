@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400;500;600;700;800;900&display=swap');@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400;500;600;700;800;900&display=swap');
 
 *{
   padding: 0px;
@@ -113,6 +114,7 @@ body{
   max-width: 150px;
   max-height: 220px;
   object-fit: cover;
+  position: absolute;
 }
 
 .card-container:hover{
@@ -145,70 +147,21 @@ body{
   align-items: center;
 }
 
-.normal{
-  background: linear-gradient(180deg, #a8a878, #fff);
+.number{
+  position: relative;
+  top: -80px;
+  font-size: 30px;
+  font-family: 'Tektur', cursive;
+  color: #00000028;
 }
 
-.grass{
-  background: linear-gradient(180deg, #78c850, #fff);
+.details{
+  text-transform: capitalize;
 }
 
-.fire{
-  background: linear-gradient(180deg, #f08030, #fff);
+.details h3{
+  font-size: 20px;
 }
 
-.fighting{
-  background: linear-gradient(180deg, #c03028, #fff);
-}
 
-.water{
-  background: linear-gradient(180deg, #6890f0, #fff);
-}
 
-.flying{
-  background: linear-gradient(180deg, #a890f0, #fff);
-}
-
-.poison{
-  background: linear-gradient(180deg, #a040a0, #fff);
-}
-
-.electric{
-  background: linear-gradient(180deg, #f8d030, #fff);
-}
-
-.ground{
-  background: linear-gradient(180deg, #e0c068, #fff);
-}
-
-.psychic{
-  background: linear-gradient(180deg, #f85888, #fff);
-}
-
-.ice{
-  background: linear-gradient(180deg, #98d8d8, #fff);
-}
-
-.bug{
-  background: linear-gradient(180deg, #a8b820, #fff);
-}
-
-.bug{
-  background: linear-gradient(180deg, #7038f8, #fff);
-}
-
-.ghost{
-  background: linear-gradient(180deg, #705898, #fff);
-}
-
-.dark{
-  background: linear-gradient(180deg, #705848, #fff);
-}
-
-.steel{
-  background: linear-gradient(180deg, #b8b8d0, #fff);
-}
-
-.fairy{
-  background: linear-gradient(180deg, #ee99ac, #fff);
-}
