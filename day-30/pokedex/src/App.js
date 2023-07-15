@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Search from "./conponents/SearchTab"
 import PokeCard from './conponents/PokeCard';
-
+import NavBar from './conponents/NavBar';
 
 function App() {
 
@@ -35,7 +35,7 @@ function App() {
   return (
     <div>
       <div className='header'>
-        <h2>Hellow rolf</h2>
+        <NavBar />
         <Search />
       </div>
       <div className="container">
