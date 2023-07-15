@@ -1,6 +1,7 @@
 import React from "react"
-import "../nav.css"
+import "../css/nav.css"
 import SignBtn from "./SignBtn"
+import { Link } from "react-router-dom"
 
 export default function NavBar(){
     return(
@@ -10,10 +11,10 @@ export default function NavBar(){
             </div>
             <div className="content">
                 <ul>
-                    <li>All Pokemon</li>
-                    <li>Play</li>
-                    <li>Leaderboard</li>
-                    <li>My list</li>
+                    <li><Link to="/" className="link" >All Pokemon</Link></li>
+                    <li><Link to="/play" className="link">Play</Link></li>
+                    <li><Link to="/leaderboard" className="link">Leaderboard</Link></li>
+                    <li><Link to="my-favourites" className="link">My List</Link></li>
                 </ul>
                 <SignBtn />
             </div>

@@ -1,54 +1,29 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import Search from "./conponents/SearchTab"
 import PokeCard from './conponents/PokeCard';
 import NavBar from './conponents/NavBar';
+import AllPokemon from './conponents/AllPokemon';
+import { Routes , Route} from 'react-router-dom';
+import Play from './conponents/Play';
+import PokePage from "./conponents/PokePage"
 
 function App() {
 
-  const [allPokemon, setPokemon] = useState([]);
-  const [loadMore, setLoadMore] = useState("https://pokeapi.co/api/v2/pokemon?limit=20")
-
-
-  const getPokemon = async () => {
-    const res = await fetch(loadMore)
-    const pokeData = await res.json()
-
-    function createPokemonArray(result) {
-      result.forEach( async (pokemon) => {
-        
-        const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
-        const data = await res.json()
- 
-        setPokemon(prevPoke => [...prevPoke, data])
-      })
-    }
-
-    createPokemonArray(pokeData.results)
-    setLoadMore(pokeData.next)
-  }
-
-  useEffect(() => {
-    getPokemon();
-  }, [])
-
   return (
-    <div>
-      <div className='header'>
-        <NavBar />
-        <Search />
-      </div>
-      <div className="container">
-        <div className="pokemon-container">
-          <div className="all-container">
-            {allPokemon.map(pokemon => {
-              return <PokeCard data={pokemon} key={pokemon.id}/>
-            })}
-          </div>
-        </div>
-        <button className='load-more' onClick={() => getPokemon()}>Load More</button>
-      </div>
+    <>
+    <div className='header'>
+      <NavBar />
     </div>
+    <Routes>
+      <Route path="/" element={<AllPokemon />}></Route>
+      <Route path="/play" element={<Play />}></Route>
+      <Route path="/pokemon/:name" element={<PokePage />}></Route>
+    </Routes>
+    </>
+
+    // <div>
+    //   <AllPokemon/>
+    // </div>
   );
 }
 

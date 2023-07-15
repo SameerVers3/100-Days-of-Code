@@ -1,5 +1,5 @@
 import React from "react";
-import "../nav.css"
+import "../css/nav.css"
 
 export default function SignBtn(){
     return (

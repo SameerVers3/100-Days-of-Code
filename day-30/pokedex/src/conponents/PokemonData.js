@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import DetailCard from "./DetailCard";
-import "../poketype.css"
+import DetailCard from "./PokePage";
+import "../css/poketype.css"
 import Type from "./Type";
 
 export default function PokeCard(PokeData){

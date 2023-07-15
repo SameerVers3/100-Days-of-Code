@@ -1,17 +1,15 @@
 import React, { useState } from "react"
-import DetailCard from "./DetailCard";
-import "../poketype.css"
+import "../css/poketype.css"
 import Type from "./Type";
+import { useNavigate } from "react-router-dom"
+
 
 export default function PokeCard(PokeData){
 
-    const [show, setShow] = useState(false);
+    const navigate = useNavigate();
 
-    const displayDetails =  () => {
-        setShow(prev => {
-            !prev ? document.body.classList.add('active') : document.body.classList.remove('active')
-            return !prev
-        });
+    const displayDetails =  (name) => {
+        navigate(`./pokemon/${name}`)
     }
 
     const getBackground = () => {
@@ -20,7 +18,7 @@ export default function PokeCard(PokeData){
 
     return (
         <>
-         <div className="card-container" onClick={() => displayDetails()}>
+         <div className="card-container" onClick={() => displayDetails(PokeData.data.species.name)}>
             <div className={getBackground()}>
                 <div className="number">
                     <h2>#0{PokeData.data.id}</h2>
@@ -33,7 +31,6 @@ export default function PokeCard(PokeData){
                 <Type typ={PokeData.data.types}/>
             </div>
          </div>
-         {show && <DetailCard Data={PokeData}/>}
          </>
     )
 }   

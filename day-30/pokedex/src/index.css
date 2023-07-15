@@ -38,40 +38,6 @@ body{
   padding: 0px 50px;
 }
 
-.search-box{
-  padding: 4px 4px;
-  margin: 25px;
-  display: flex;
-  gap: 3px;
-  border-radius: 15px;
-  box-shadow: 5px 5px 15px #dadada;
-}
-
-.search-bar{
-  border: none;
-  padding: 10px;
-  border-radius: 15px;
-  outline: none;
-  text-align: center;
-}
-
-.search-btn{
-  border: none;
-  border-radius: 50%;
-  padding: 10px;
-  cursor: pointer;
-  background-color: #fff;
-}
-
-.search-bar::placeholder{
-  font-weight: 600;
-  color: #00000034;
-}
-
-.search-btn:hover{
-  background-color: rgba(206, 205, 205, 0.527);
-}
-
 .card-container{
   background-color: #fff;
   margin: 10px;

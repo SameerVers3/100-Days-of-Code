@@ -11,6 +11,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
 }
 
 .logo{
@@ -49,7 +50,12 @@
     font-weight: 600;
 }
 
-.content li:hover{
+.link{
+    color: #fff;
+    text-decoration: none;
+}
+
+.link:hover{
     cursor: pointer;
     color: #ffcb05;
 }
