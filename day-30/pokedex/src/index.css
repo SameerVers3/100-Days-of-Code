@@ -94,31 +94,6 @@ body{
   box-shadow: 5px 5px 15px #cccccc;
 }
 
-.overlay{
-  position: fixed;
-  top:0;
-  left:0;
-  background:rgba(0, 0, 0, 0.349);
-  z-index:10;
-  width:100vw;
-  height:100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.active {
-  overflow: hidden;
-}
-
-.card{
-  background-color: #fff;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .number{
   position: relative;
   top: -80px;
@@ -134,6 +109,3 @@ body{
 .details h3{
   font-size: 20px;
 }
-
-
-

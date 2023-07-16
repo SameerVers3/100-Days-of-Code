@@ -1,34 +1,33 @@
 import React, {useState, useEffect} from "react"
-import PokeCard from "./PokemonData"
 import SearchTab from "./SearchTab";
 import "../css/search.css"
+import PokeCard from "./PokeCard";
 
 export default function AllPokemon(){
 
     const [allPokemon, setPokemon] = useState([]);
-    const [loadMore, setLoadMore] = useState("https://pokeapi.co/api/v2/pokemon?limit=20")
+    const [loadMore, setLoadMore] = useState("https://pokeapi.co/api/v2/pokemon?limit=10")
   
   
     const getPokemon = async () => {
       const res = await fetch(loadMore)
       const pokeData = await res.json()
   
-      function createPokemonArray(result) {
-        result.forEach( async (pokemon) => {
-          
-          const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
-          const data = await res.json()
-   
-          setPokemon(prevPoke => [...prevPoke, data])
-        })
-      }
-  
-      createPokemonArray(pokeData.results)
+      const promises = pokeData.results.map(async (pokemon) => {
+        const response = await fetch(pokemon.url);
+        const data = await response.json();
+        return data;
+      });
+
+      Promise.all(promises).then((pokemonData) => {
+        setPokemon((prevPoke) => [...prevPoke, ...pokemonData]);
+      });
+      
       setLoadMore(pokeData.next)
     }
-  
+
     useEffect(() => {
-      getPokemon();
+        getPokemon();
     }, [])
 
     return(
@@ -38,7 +37,7 @@ export default function AllPokemon(){
         <div className="pokemon-container">
           <div className="all-container">
             {allPokemon.map(pokemon => {
-              return <PokeCard data={pokemon} key={pokemon.id}/>
+              return <PokeCard data={pokemon} key={pokemon.species.name}/>
             })}
           </div>
         </div>
