@@ -6,24 +6,28 @@ import AllPokemon from './conponents/AllPokemon';
 import { Routes , Route} from 'react-router-dom';
 import Play from './conponents/Play';
 import PokePage from "./conponents/PokePage"
+import { AuthContextProvider } from './context/AuthContext';
+import SignInPage from './conponents/SignInPage';
+import LeaderBoard from './conponents/LeaderBoard';
 
 function App() {
 
   return (
     <>
-    <div className='header'>
-      <NavBar />
-    </div>
-    <Routes>
-      <Route path="/" element={<AllPokemon />}></Route>
-      <Route path="/play" element={<Play />}></Route>
-      <Route path="/pokemon/:name" element={<PokePage />}></Route>
-    </Routes>
-    </>
+    <AuthContextProvider>
+      <div className='header'>
+        <NavBar />
+      </div>
+      <Routes>
+        <Route path="/" element={<AllPokemon />}></Route>
+        <Route path="/play" element={<Play />}></Route>
+        <Route path="/pokemon/:name" element={<PokePage />}></Route>
+        <Route path="/signup" element={<SignInPage/>}></Route>
+        <Route path="/leaderboard" element={<LeaderBoard/>}></Route>
+      </Routes>
+    </AuthContextProvider>
 
-    // <div>
-    //   <AllPokemon/>
-    // </div>
+    </>
   );
 }
 

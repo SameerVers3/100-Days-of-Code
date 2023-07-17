@@ -59,3 +59,33 @@
     cursor: pointer;
     color: #ffcb05;
 }
+
+/* .user-image{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+} */
+
+.user-image img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+.nav-user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.sign-out{
+    border-radius: 10px;
+    border: 2px solid #fff;
+    padding: 5px;
+}
+
+.sign-out:hover{
+    color: #ee241d;
+}

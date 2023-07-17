@@ -2,8 +2,13 @@ import React from "react"
 import "../css/nav.css"
 import SignBtn from "./SignBtn"
 import { Link } from "react-router-dom"
+import { UserAuth } from "../context/AuthContext"
+import NavUser from "./NavUser"
 
 export default function NavBar(){
+
+    const {user, logOut} = UserAuth()
+
     return(
         <nav className="nav">
             <Link to="/" className="link" >
@@ -18,7 +23,7 @@ export default function NavBar(){
                     <li><Link to="/leaderboard" className="link">Leaderboard</Link></li>
                     <li><Link to="/my-favourites" className="link">My List</Link></li>
                 </ul>
-                <SignBtn />
+                {user? <NavUser/>: <Link to="/signup" className="link"><SignBtn /></Link>}
             </div>
         </nav>
     )

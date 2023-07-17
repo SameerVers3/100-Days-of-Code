@@ -1,5 +1,7 @@
 # Ignore environment files
 env.js
+firebase.js
+
 
 node_modules/
 

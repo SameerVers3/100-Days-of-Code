@@ -2,9 +2,41 @@
     padding: 300px;
 }
 
-.img-cont{
-    width: 320px;
-    height: 300px;
+.card-container{
+    background-color: #fff;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 5px; */
+    border-radius: 15px;
+    gap: 3px;
+    max-width: 200px;
+    max-height: 400px;
+    box-shadow: 5px 5px 15px #dadada;
+    padding-bottom: 10px;
+    transition: transform 200ms;
+    cursor: pointer;
+  }
+  
+  .load-more{
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #000;
+    margin: 40px;
+    cursor: pointer;
+  }
+  
+  .load-more:hover{
+    transform: translate(-1px, -1px);
+    box-shadow: 5px 5px 15px #cccccc;
+  }
+  .img-container{
+    width: 180px;
+    height: 220px;
     object-fit: cover;
     display: flex;
     justify-content: center;
@@ -14,16 +46,11 @@
     flex-direction: column;
   }
   
-  .img-cont img{
-    max-width: 300px;
-    max-height: 290px;
+  .img-container img{
+    max-width: 150px;
+    max-height: 220px;
     object-fit: cover;
     position: absolute;
-  }
-  
-  .card-container:hover{
-    transform: translate(-4px, -3px);
-    box-shadow: 5px 5px 15px #cccccc;
   }
   
   .number{
@@ -39,9 +66,7 @@
   }
   
   .details h3{
-    margin: 10px 5px;
-    letter-spacing: 2px;
-    font-size: 40px;
+    font-size: 20px;
   }
 
   .normal{
@@ -111,18 +136,3 @@
   .fairy{
     background: linear-gradient(180deg, #ee99ac, #ffffff00);
   }
-
-  .pic{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-
-.type{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
