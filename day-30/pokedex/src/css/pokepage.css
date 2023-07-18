@@ -2,6 +2,13 @@
     padding: 300px;
 }
 
+.pokePage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .card-container{
     background-color: #fff;
     margin: 10px;
