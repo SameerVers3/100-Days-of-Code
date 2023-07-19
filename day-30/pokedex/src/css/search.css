@@ -40,3 +40,8 @@
 .search-btn:hover{
     background-color: rgba(206, 205, 205, 0.527);
 }
+
+.loader{
+    margin-top: 150px;
+    margin-bottom: 150px;
+}

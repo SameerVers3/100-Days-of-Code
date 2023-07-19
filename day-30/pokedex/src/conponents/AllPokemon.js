@@ -1,59 +1,68 @@
-import React, {useState, useEffect} from "react"
+import React, { useState, useEffect } from "react";
 import SearchTab from "./SearchTab";
-import "../css/search.css"
+import "../css/search.css";
 import PokeCard from "./PokeCard";
+import { CircleLoader } from "react-spinners";
 
-export default function AllPokemon(){
+export default function AllPokemon() {
+  const [allPokemon, setPokemon] = useState([]);
+  const [loadMore, setLoadMore] = useState("https://pokeapi.co/api/v2/pokemon?limit=10");
+  const [loading, setLoading] = useState(true);
 
-    const [allPokemon, setPokemon] = useState([]);
-    const [loadMore, setLoadMore] = useState("https://pokeapi.co/api/v2/pokemon?limit=10")
-    const [loading, setLoading] = useState(undefined);
-  
-    const getPokemon = async () => {
-      const res = await fetch(loadMore)
-      const pokeData = await res.json()
-  
-      const promises = pokeData.results.map(async (pokemon) => {
-        const response = await fetch(pokemon.url);
-        const data = await response.json();
-        return data;
-      });
+  const getPokemon = async () => {
+    setLoading(true);
 
-      Promise.all(promises).then((pokemonData) => {
-        setPokemon((prevPoke) => [...prevPoke, ...pokemonData]);
-      });
-      setLoading(false)
-      setLoadMore(pokeData.next)
-    }
+    const res = await fetch(loadMore);
+    const pokeData = await res.json();
 
-    useEffect(() => {
-        setTimeout(() => {
-          getPokemon();
-        }, 1500)
-    }, [])
+    const promises = pokeData.results.map(async (pokemon) => {
+      const response = await fetch(pokemon.url);
+      const data = await response.json();
+      return data;
+    });
 
-    return(
-        <>
-        <SearchTab />
-        <div className="container">
-          {!loading? <CircleLoader
+    Promise.all(promises).then((pokemonData) => {
+      setPokemon((prevPoke) => [...prevPoke, ...pokemonData]);
+      setLoading(false);
+    });
+
+    setLoadMore(pokeData.next);
+  };
+
+  useEffect(() => {
+    getPokemon();
+  }, []); // Only run getPokemon on initial mount
+
+  const handleLoadMore = () => {
+    setLoading(true);
+    getPokemon(); // Run getPokemon when "Load More" button is clicked
+  };
+
+  return (
+    <>
+      <SearchTab />
+      <div className="container">
+        <div className="pokemon-container">
+          <div className="all-container">
+            {allPokemon.map((pokemon) => {
+              return <PokeCard data={pokemon} key={pokemon.species.name} />;
+            })}
+          </div>
+        </div>
+        {loading && (
+          <CircleLoader
             color={"#ff3f05"}
             loading={true}
             size={100}
             aria-label="Loading Spinner"
             data-testid="loader"
-            />:
-          ( <div className="pokemon-container">
-            <div className="all-container">
-             {allPokemon.map(pokemon => {
-                return <PokeCard data={pokemon} key={pokemon.species.name}/>
-              })}
-            </div>
-            </div>
-          <button className='load-more' onClick={() => getPokemon()}>Load More</button>
-          )  
-        }
-        </div>
-      </>
-    )
+            className="loader"
+          />
+        )}
+        <button className="load-more" onClick={handleLoadMore} disabled={loading}>
+          Load More
+        </button>
+      </div>
+    </>
+  );
 }

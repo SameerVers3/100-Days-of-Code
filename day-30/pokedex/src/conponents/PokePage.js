@@ -13,7 +13,7 @@ export default function PokePage() {
   useEffect(() => {
     setTimeout(() => {
       getPokemon();
-    }, 2000);
+    }, 1000);
   }, []);
 
   const getPokemon = async () => {
@@ -21,7 +21,6 @@ export default function PokePage() {
     const data = await res.json();
     setPokeData(data);
     setDone(true);
-    console.log(pokeData[0])
   };
 
 

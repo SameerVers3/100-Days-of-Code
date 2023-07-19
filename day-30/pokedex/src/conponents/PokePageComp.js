@@ -1,8 +1,14 @@
-import react from "react"
+import react, {useEffect, useState} from "react"
 import Type from "./Type"
 import "../css/pokepage.css";
 
 export default function PokePageComp(PokeData){
+
+    const [pd, setpd] = useState({})
+
+    useEffect(() => {
+        fetchPd()
+    }, [])
 
     if (!PokeData || !PokeData.data || !PokeData.data.sprites) {
         return <h1>Not Found</h1>;
@@ -15,8 +21,18 @@ export default function PokePageComp(PokeData){
         return "img-cont"
     }
     
-    
+    const fetchPd = async (id) => {
+        const res = await fetch(`https://pokeapi.co/api/v2/pokemon-species/25`);
+        const data = await res.json();
 
+        setpd(data);
+        console.log(data);
+    }
+
+    {if (pd === null){
+        return null
+    } 
+    else {
     return (
         <div className="cont">
             <div className="card-container">
@@ -35,9 +51,10 @@ export default function PokePageComp(PokeData){
             <div>
                 <div>
                     <h2>Description: </h2>
-                    {/* <p>{getDescription()}</p> */}
+                    <p>{pd.flavor_text_entries[0].flavor_text}</p>
                 </div>
             </div>
         </div>
     )
+    }
 }
