@@ -3,58 +3,43 @@ import Type from "./Type"
 import "../css/pokepage.css";
 
 export default function PokePageComp(PokeData){
-
-    const [pd, setpd] = useState({})
-
-    useEffect(() => {
-        fetchPd()
-    }, [])
+    const [pd, setpd] = useState(PokeData.data);
+    const [pd2, setpd2] = useState(PokeData.data2);
 
     if (!PokeData || !PokeData.data || !PokeData.data.sprites) {
         return <h1>Not Found</h1>;
     }
 
     const getBackground = () => {
-        if (PokeData.data.types && PokeData.data.types.length > 0) {
-          return `img-cont ${PokeData.data.types[0].type.name}`
+        if (pd.types && pd.types.length > 0) {
+          return `img-cont ${pd.types[0].type.name}`
         }
         return "img-cont"
     }
-    
-    const fetchPd = async (id) => {
-        const res = await fetch(`https://pokeapi.co/api/v2/pokemon-species/25`);
-        const data = await res.json();
 
-        setpd(data);
-        console.log(data);
-    }
-
-    {if (pd === null){
-        return null
-    } 
-    else {
     return (
         <div className="cont">
-            <div className="card-container">
+            <div className="card-cont">
                 <div className={getBackground()}>
                     <div className="number">
-                        <h2>#0{PokeData.data.id}</h2>
+                        <h2>#0{pd.id}</h2>
                     </div>
-                    <img src={PokeData.data.sprites.other.dream_world.front_default} alt={PokeData.data.species.name} />
+                    <img src={pd.sprites.other["official-artwork"].front_default} alt={pd.species.name} className="pokemon-image"/>
                 </div>
-                    <div className="details">
-                        <h3>{PokeData.data.species.name}</h3>
+                    <div className="det">
+                        <h3>{pd.species.name}</h3>
 
-                        <Type typ={PokeData.data.types}/>
+                        <div className="t"><h2>Type: </h2>
+                        <Type typ={pd.types}/>
+                        </div>
                     </div>
                 </div>
-            <div>
-                <div>
-                    <h2>Description: </h2>
-                    <p>{pd.flavor_text_entries[0].flavor_text}</p>
+            <div className="desc">
+                <div className="bio">
+                    <h2>Bio: </h2>
+                    <p>{pd2.flavor_text_entries[0].flavor_text}</p>
                 </div>
             </div>
         </div>
     )
-    }
 }

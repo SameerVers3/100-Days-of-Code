@@ -23,7 +23,7 @@ export default function PokeCard(PokeData){
                 <div className="number">
                     <h2>#0{PokeData.data.id}</h2>
                 </div>
-                <img src={PokeData.data.sprites.other.dream_world.front_default} alt={PokeData.data.species.name} />
+                <img src={PokeData.data.sprites.other["official-artwork"].front_default} alt={PokeData.data.species.name} />
             </div>
                 <div className="details">
                     <h3>{PokeData.data.species.name}</h3>

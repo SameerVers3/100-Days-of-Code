@@ -6,23 +6,26 @@ import CircleLoader from "react-spinners/CircleLoader"
 
 export default function PokePage() {
   const [pokeData, setPokeData] = useState({});
-  const [done, setDone] = useState(undefined);
+  const [pokeData2, setPokeData2] = useState({});
+  const [done, setDone] = useState(false);
 
   const { name } = useParams();
 
   useEffect(() => {
-    setTimeout(() => {
-      getPokemon();
-    }, 1000);
+    getPokemon()
+    setTimeout(()=> {
+      setDone(true);
+    }, 1000)
   }, []);
 
   const getPokemon = async () => {
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
     const data = await res.json();
+    const res2 = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${data.id}`);
+    const data2 = await res2.json();
     setPokeData(data);
-    setDone(true);
+    setPokeData2(data2);
   };
-
 
   return (
     <div className="pokePage">
@@ -33,8 +36,9 @@ export default function PokePage() {
         aria-label="Loading Spinner"
         data-testid="loader"
       />: 
-      <PokePageComp data={pokeData} key={pokeData.species}/>
-      }
+      <PokePageComp data={pokeData} data2={pokeData2} key={pokeData.species}/>
+    }
     </div>
+    
   );
 }
