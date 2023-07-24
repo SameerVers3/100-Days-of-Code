@@ -1,6 +1,7 @@
 import react, {useEffect, useState} from "react"
 import Type from "./Type"
 import "../css/pokepage.css";
+import Stat from "../conponents/Stat"
 
 export default function PokePageComp(PokeData){
     const [pd, setpd] = useState(PokeData.data);
@@ -15,6 +16,27 @@ export default function PokePageComp(PokeData){
           return `img-cont ${pd.types[0].type.name}`
         }
         return "img-cont"
+    }
+
+    const calculateHeight = (h) => {
+        let m = h/10;
+        let f = m * 3.28084;
+        let ft = Math.round(f);
+        let inch = Math.round((f - ft)*10);
+        if (inch < 0){
+            inch += 12;
+            ft--;
+        }
+        return (`${ft}'${inch}''`)
+    }
+
+    const getAbilities = () => {
+        let ability = "";
+        for (let i=0; i<pd.abilities.length; i++){
+            ability += `${pd.abilities[i].ability.name}  `;
+        }
+        console.log(pd2);
+        return  ability
     }
 
     return (
@@ -39,7 +61,49 @@ export default function PokePageComp(PokeData){
                     <h2>Bio: </h2>
                     <p>{pd2.flavor_text_entries[0].flavor_text}</p>
                 </div>
+
+                <div className="stats">
+                <table className="t-stat">
+                    <tr>
+                        <td>Genus: </td>
+                        <td>{pd2.genera[7].genus}</td>
+                    </tr>
+                    <tr>
+                        <td>Habitat: </td>
+                        <td>{pd2.habitat.name}</td>
+                    </tr>
+                    <tr>
+                        <td>Shape: </td>
+                        <td>{pd2.shape.name}</td>
+                    </tr>
+                    <tr>
+                        <td>Height: </td>
+                        <td>{calculateHeight(pd.height)}</td>
+                    </tr>
+                    <tr>
+                        <td>Abilities: </td>
+                        <td>{getAbilities()}</td>
+                    </tr>
+                    <tr>
+                        <td>Weight: </td>
+                        <td>{`${Math.round((pd.weight/10) * 2.20462)} lbs`}</td>
+                    </tr>
+                    <tr>
+                        <td>Capture rate: </td>
+                        <td>{pd2.capture_rate}</td>
+                    </tr>
+                    </table>
+                </div>
+                
             </div>
+
+            <div className="desc">
+                <div className="evolution-chain">
+
+                </div>
+                <Stat data={pd}/>
+            </div>
+
         </div>
     )
 }

@@ -120,12 +120,61 @@
 .bio{
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 30px;
+  align-items: start;
+  flex-direction: column;
+  gap: 5px;
+  width: 350px;
+  background-color: #a1a1a115;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.bio h2{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.stats h2{
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .desc{
   display: flex;
   justify-content: space-evenly;
   align-items: start;
+  flex-direction: column;
+  gap: 30px;
 }
+
+.stats{
+  background-color: #a1a1a115;
+  width: 350px;
+  height: fit-content;
+  padding: 10px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+td {
+  padding: 5px;
+  width: fit-content;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+tr{
+  padding-block: 2px;
+}
+
+.evolution-chain{
+  width: 700px;
+  height: 350px;
+  background-color: #a1a1a115;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+
