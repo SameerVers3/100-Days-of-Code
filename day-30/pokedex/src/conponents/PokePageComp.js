@@ -40,6 +40,9 @@ export default function PokePageComp(PokeData){
         return  ability
     }
 
+    console.log("here");
+    console.log(pd2)
+
     return (
         <div className="cont">
             <div className="card-cont">
@@ -89,17 +92,51 @@ export default function PokePageComp(PokeData){
                         <td>Weight: </td>
                         <td>{`${Math.round((pd.weight/10) * 2.20462)} lbs`}</td>
                     </tr>
+                    
+                    </table>
+                </div>
+                
+                <div className="training">
+                <table className="t-stat">
+                    <tr>
+                        <td>Base Happiness: </td>
+                        <td>{pd.base_happiness}</td>
+                    </tr>
+                    <tr>
+                        <td>Capture rate: </td>
+                        <td>{pd2.capture_rate}</td>
+                    </tr>
+                    {/* <tr>
+                        <td>Growth rate: </td>
+                        <td>{pd.growth_rate.name}</td>
+                    </tr> */}
+                    <tr>
+                        <td>Shape: </td>
+                        <td>{pd2.shape.name}</td>
+                    </tr>
+                    <tr>
+                        <td>Height: </td>
+                        <td>{calculateHeight(pd.height)}</td>
+                    </tr>
+                    <tr>
+                        <td>Abilities: </td>
+                        <td>{getAbilities()}</td>
+                    </tr>
+                    <tr>
+                        <td>Weight: </td>
+                        <td>{`${Math.round((pd.weight/10) * 2.20462)} lbs`}</td>
+                    </tr>
                     <tr>
                         <td>Capture rate: </td>
                         <td>{pd2.capture_rate}</td>
                     </tr>
                     </table>
                 </div>
-                
             </div>
 
             <div className="desc">
                 <div className="evolution-chain">
+                    <h2>Evolution Chain</h2>
                     <Evolution data={pd2}/>
                 </div>
                 <Stat data={pd}/>

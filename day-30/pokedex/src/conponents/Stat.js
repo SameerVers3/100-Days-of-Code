@@ -51,10 +51,10 @@ export default function Stat(pokeData){
 
     return (
         <div className="stat-container">
-        <h2>Stat</h2>
-        <div className="stat-cont">
-            {getStat()}
-        </div>
+            <h2>Stat</h2>
+                <div className="stat-cont">
+                    {getStat()}
+                </div>
         </div>
     )
 }

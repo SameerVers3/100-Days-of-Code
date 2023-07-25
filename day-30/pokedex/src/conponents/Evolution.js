@@ -39,7 +39,7 @@ export default function Evolution(pokeData) {
   }, [pd.evolution_chain.url]);
 
   return (
-    <>
+    <div className="ev">
       {evolutionData.map((data) => (
         <div className="evolve" key={data.id}>
           <div className="evolve-box">
@@ -48,10 +48,11 @@ export default function Evolution(pokeData) {
               alt={data.species.name}
               className="evolve-img"
             />
-            <h3 className="evolveName">{data.species.name}</h3>
           </div>
+          <h3 className="evolveName">{data.species.name}</h3>
         </div>
+        
       ))}
-    </>
+    </div>
   );
 }

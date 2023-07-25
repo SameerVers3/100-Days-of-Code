@@ -3,11 +3,42 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    background-color: aqua;
-
 }
 
 .evolve-box{
-    width: 100px;
-    object-fit: contain;
+    width: 180px;
+    height: 180px;
+    padding: 15px;
+    background: linear-gradient(170deg, #ffffff9f, #00000036);
+    margin: 10px;
+    border-radius: 50%;
+    box-shadow: 3px 5px 10px #0300004f;
+    cursor: pointer;
+}
+
+.evolve-box:hover{
+    box-shadow: 3px 5px 10px #0000006c;
+}
+
+.evolve-img{
+    width: 135px;
+}
+
+.evolve{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.evolve h3{
+    font-size: 23px;
+}
+
+.ev{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
 }
