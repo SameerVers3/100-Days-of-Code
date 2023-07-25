@@ -1,0 +1,13 @@
+.evolve{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: aqua;
+
+}
+
+.evolve-box{
+    width: 100px;
+    object-fit: contain;
+}

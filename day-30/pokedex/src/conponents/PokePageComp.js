@@ -2,6 +2,7 @@ import react, {useEffect, useState} from "react"
 import Type from "./Type"
 import "../css/pokepage.css";
 import Stat from "../conponents/Stat"
+import Evolution from "./Evolution";
 
 export default function PokePageComp(PokeData){
     const [pd, setpd] = useState(PokeData.data);
@@ -99,7 +100,7 @@ export default function PokePageComp(PokeData){
 
             <div className="desc">
                 <div className="evolution-chain">
-
+                    <Evolution data={pd2}/>
                 </div>
                 <Stat data={pd}/>
             </div>
