@@ -1,14 +1,23 @@
 import React, { useState, useEffect } from "react";
 import "../css/evolve.css"
+import { useNavigate } from "react-router-dom"
 
 
 export default function Evolution(pokeData) {
+  const [pd2, setpd2] = useState(pokeData.data2);
   const [pd, setpd] = useState(pokeData.data);
   const [evolutionData, setEvolutionData] = useState([]);
 
+  const navigate = useNavigate();
+
+  const displayDetails =  (name) => {
+    navigate(`/pokemon/${name}`);
+    window.location.reload();
+  }
+
   useEffect(() => {
     const fetchEvolutionData = async () => {
-      const res = await fetch(pd.evolution_chain.url);
+      const res = await fetch(pd2.evolution_chain.url);
       const data = await res.json();
 
       let chainName = [];
@@ -36,13 +45,23 @@ export default function Evolution(pokeData) {
     };
 
     fetchEvolutionData();
-  }, [pd.evolution_chain.url]);
+  }, [pd2.evolution_chain.url]);
+
+  const getBackground = () => {
+
+    console.log("here")
+    console.log(pd)
+    if (pd.types && pd.types.length > 0) {
+      return `evolve-box ${pd.types[0].type.name}`
+    }
+    return "evolve-box"
+  }
 
   return (
     <div className="ev">
       {evolutionData.map((data) => (
         <div className="evolve" key={data.id}>
-          <div className="evolve-box">
+          <div className={getBackground()} onClick={() => displayDetails(data.species.name)}>
             <img
               src={data.sprites.other["official-artwork"].front_default}
               alt={data.species.name}

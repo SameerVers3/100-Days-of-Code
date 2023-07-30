@@ -13,6 +13,19 @@
   height: 92vh;
 }
 
+.id{
+  position: relative;
+  top: -60px;
+  font-size: 30px;
+  font-family: 'Tektur', cursive;
+  color: #000000;
+}
+
+.det h3{
+  text-align: center;
+  text-transform: capitalize;
+}
+
   .normal{
     background: linear-gradient(180deg, #a8a878, #ffffff00);
   }
@@ -94,19 +107,18 @@
 
 .pokemon-image{
   width: 270px;
-  max-height: 300px;
+  height: 300px;
   object-fit: cover;
   position: absolute;
 }
 
 .card-cont{
-  margin: 10px;
+  margin: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
-  width: 340px;
-  height: 400px;
+  width: 350px;
+  height: 470px;
   padding-bottom: 10px;
 }
 
@@ -156,6 +168,13 @@
   display: flex;
   justify-content: start;
   align-items: center;
+  flex-direction: column;
+}
+
+.stats h2{
+  font-size: 20px;
+  width: 100%;
+  text-align: start;
 }
 
 td {
@@ -171,9 +190,8 @@ tr{
 
 .evolution-chain{
   width: 700px;
-  height: 300px;
+  height: 350px;
   background-color: #a1a1a115;
-  padding: 10px;
   border-radius: 15px;
   display: flex;
   justify-content: center;
@@ -181,6 +199,25 @@ tr{
   flex-direction: column;
 }
 
+.training{
+  background-color: #a1a1a115;
+  width: 350px;
+  height: fit-content;
+  padding: 10px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+}
 
+.training h2{
+  font-size: 20px;
+  width: 100%;
+  text-align: start;
+}
 
-
+.t-stat{
+  width: 100%;
+  margin-top: 15px
+}

@@ -108,3 +108,17 @@ body{
 .details h3{
   font-size: 20px;
 }
+
+.favourite{
+  position: relative;
+  top: 15px;
+  left: 95px;
+  height: 0px;
+  font-size: 20px;
+  color: #000;
+  cursor: pointer;
+}
+
+.favourite:hover{
+  color: #ffe600;
+}

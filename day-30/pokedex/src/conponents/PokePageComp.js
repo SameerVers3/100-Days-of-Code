@@ -47,7 +47,7 @@ export default function PokePageComp(PokeData){
         <div className="cont">
             <div className="card-cont">
                 <div className={getBackground()}>
-                    <div className="number">
+                    <div className="id">
                         <h2>#0{pd.id}</h2>
                     </div>
                     <img src={pd.sprites.other["official-artwork"].front_default} alt={pd.species.name} className="pokemon-image"/>
@@ -67,6 +67,7 @@ export default function PokePageComp(PokeData){
                 </div>
 
                 <div className="stats">
+                    <h2>Info: </h2>
                 <table className="t-stat">
                     <tr>
                         <td>Genus: </td>
@@ -97,38 +98,23 @@ export default function PokePageComp(PokeData){
                 </div>
                 
                 <div className="training">
+                    <h2>Training: </h2>
                 <table className="t-stat">
                     <tr>
                         <td>Base Happiness: </td>
-                        <td>{pd.base_happiness}</td>
+                        <td>{pd2.base_happiness}</td>
                     </tr>
                     <tr>
                         <td>Capture rate: </td>
                         <td>{pd2.capture_rate}</td>
                     </tr>
-                    {/* <tr>
+                    <tr>
                         <td>Growth rate: </td>
-                        <td>{pd.growth_rate.name}</td>
-                    </tr> */}
-                    <tr>
-                        <td>Shape: </td>
-                        <td>{pd2.shape.name}</td>
+                        <td>{pd2.growth_rate.name}</td>
                     </tr>
                     <tr>
-                        <td>Height: </td>
-                        <td>{calculateHeight(pd.height)}</td>
-                    </tr>
-                    <tr>
-                        <td>Abilities: </td>
-                        <td>{getAbilities()}</td>
-                    </tr>
-                    <tr>
-                        <td>Weight: </td>
-                        <td>{`${Math.round((pd.weight/10) * 2.20462)} lbs`}</td>
-                    </tr>
-                    <tr>
-                        <td>Capture rate: </td>
-                        <td>{pd2.capture_rate}</td>
+                        <td>Base Experience: </td>
+                        <td>{pd.base_experience}</td>
                     </tr>
                     </table>
                 </div>
@@ -137,7 +123,7 @@ export default function PokePageComp(PokeData){
             <div className="desc">
                 <div className="evolution-chain">
                     <h2>Evolution Chain</h2>
-                    <Evolution data={pd2}/>
+                    <Evolution data2={pd2} data={pd}/>
                 </div>
                 <Stat data={pd}/>
             </div>
