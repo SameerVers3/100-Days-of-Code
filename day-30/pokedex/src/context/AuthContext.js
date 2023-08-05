@@ -97,11 +97,6 @@ export const AuthContextProvider = ({children}) => {
         }
         })
     }, [])
-    
-    useEffect(() => {
-        console.log("here")
-        console.log(userData);
-    }, [userData]);
 
     return (
         <AuthContext.Provider value={{googleSignIn, logOut, user, addFavorite, removeFromFavorites, userData}}>

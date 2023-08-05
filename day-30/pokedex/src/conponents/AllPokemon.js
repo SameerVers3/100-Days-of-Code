@@ -9,10 +9,8 @@ export default function AllPokemon() {
   const [loadMore, setLoadMore] = useState("https://pokeapi.co/api/v2/pokemon?limit=10");
   const [loading, setLoading] = useState(true);
 
-  const getPokemon = async () => {
-    setLoading(true);
-
-    const res = await fetch(loadMore);
+  const fetchPokemonData = async (url) => {
+    const res = await fetch(url);
     const pokeData = await res.json();
 
     const promises = pokeData.results.map(async (pokemon) => {
@@ -21,17 +19,28 @@ export default function AllPokemon() {
       return data;
     });
 
-    Promise.all(promises).then((pokemonData) => {
-      setPokemon((prevPoke) => [...prevPoke, ...pokemonData]);
-      setLoading(false);
-    });
-
     setLoadMore(pokeData.next);
+
+    return Promise.all(promises);
+  };
+
+  const getPokemon = async () => {
+    setLoading(true);
+
+    const pokemonData = await fetchPokemonData(loadMore);
+
+    setPokemon((prevPoke) => [...prevPoke, ...pokemonData]);
+    setLoading(false);
+
   };
 
   useEffect(() => {
-    getPokemon();
-  }, []); // Only run getPokemon on initial mount
+    // Load initial set of Pokemon
+    fetchPokemonData(loadMore).then((pokemonData) => {
+      setPokemon(pokemonData);
+      setLoading(false);
+    });
+  }, []);
 
   const handleLoadMore = () => {
     setLoading(true);

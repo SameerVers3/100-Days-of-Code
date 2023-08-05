@@ -30,9 +30,6 @@ export default function PokeCard(PokeData) {
   }
 
   useEffect(() => {
-    // You don't need to use async-await for updating the isFav state
-    // since userData.favorites is already available synchronously.
-    // Simply set the initial isFav value based on userData.favorites.
   }, [userData.favorites]);
 
   return (

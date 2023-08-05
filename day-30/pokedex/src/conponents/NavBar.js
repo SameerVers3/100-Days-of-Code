@@ -21,7 +21,7 @@ export default function NavBar(){
                     <li><Link to="/" className="link" >All Pokemon</Link></li>
                     <li><Link to="/play" className="link">Play</Link></li>
                     <li><Link to="/leaderboard" className="link">Leaderboard</Link></li>
-                    <li><Link to="/my-favourites" className="link">My List</Link></li>
+                    <li><Link to="/my-list" className="link">My List</Link></li>
                 </ul>
                 {user? <NavUser/>: <Link to="/signup" className="link"><SignBtn /></Link>}
             </div>

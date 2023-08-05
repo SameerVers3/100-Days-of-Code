@@ -9,6 +9,7 @@ import PokePage from "./conponents/PokePage"
 import { AuthContextProvider } from './context/AuthContext';
 import SignInPage from './conponents/SignInPage';
 import LeaderBoard from './conponents/LeaderBoard';
+import FavList from './conponents/FavList';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/pokemon/:name" element={<PokePage />}></Route>
         <Route path="/signup" element={<SignInPage/>}></Route>
         <Route path="/leaderboard" element={<LeaderBoard/>}></Route>
+        <Route path="/my-list" element={<FavList/>}></Route>
       </Routes>
     </AuthContextProvider>
 
