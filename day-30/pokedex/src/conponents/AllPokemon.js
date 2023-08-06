@@ -6,7 +6,7 @@ import { CircleLoader } from "react-spinners";
 
 export default function AllPokemon() {
   const [allPokemon, setPokemon] = useState([]);
-  const [loadMore, setLoadMore] = useState("https://pokeapi.co/api/v2/pokemon?limit=10");
+  const [loadMore, setLoadMore] = useState("https://pokeapi.co/api/v2/pokemon?limit=40");
   const [loading, setLoading] = useState(true);
 
   const fetchPokemonData = async (url) => {
@@ -28,7 +28,6 @@ export default function AllPokemon() {
     setLoading(true);
 
     const pokemonData = await fetchPokemonData(loadMore);
-
     setPokemon((prevPoke) => [...prevPoke, ...pokemonData]);
     setLoading(false);
 

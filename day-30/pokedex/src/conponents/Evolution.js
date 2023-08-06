@@ -48,9 +48,6 @@ export default function Evolution(pokeData) {
   }, [pd2.evolution_chain.url]);
 
   const getBackground = () => {
-
-    console.log("here")
-    console.log(pd)
     if (pd.types && pd.types.length > 0) {
       return `evolve-box ${pd.types[0].type.name}`
     }
