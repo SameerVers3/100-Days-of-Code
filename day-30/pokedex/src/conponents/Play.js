@@ -3,6 +3,7 @@ import Game from "./Game"
 import "../css/game.css";
 
 export default function Play(){
+    const [score, setScore] = useState(0);
     const [lives, setLives] = useState(3);
 
     const showLives = () => {
@@ -24,11 +25,27 @@ export default function Play(){
         )
     }
 
+    function incScore() {
+        setScore(e => e+5);
+    }
+
+    function decLive() {
+        lives.value --;
+    }
+
+    function displayScore() {
+        return (
+            <div className="score">
+                {score}
+            </div>
+        )
+    }
 
     return (
         <>
-        {showLives()}
-        <Game/>
+            <div className="game-container">
+                <Game scoreFunction={incScore} livesFunction={decLive} showLives={showLives} dScore={displayScore}/>
+            </div>
         </>
     )
 }
